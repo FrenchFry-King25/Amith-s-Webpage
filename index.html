@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en" dir="ltr">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amith Polineni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav-bar">
+
+         <div class="nav-bar-right">
+            <div class="profile-pic">
+               <img src="images/headshot.jpg">
+            </div>
+           <div class="nav-bar-name">
+              AMITH POLINENI
+           </div>
+         </div>
+
+        <div class="nav-bar-left">
+
+          <div class="nav-bar-link active-nav-link">
+            <a href="index.html">Home</a>
+          </div>
+
+          <div class="nav-bar-link">
+            <a href="about.html">About</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="portfolio-container">
+        <div class="portfolio-items">
+
+          <div class="portfolio-item">
+            <div class="item-background-image" style="background-image:url(images/education.jpg)"></div>
+            <div class="item-text">
+
+              <div class="item-heading">
+                <h1>Education</h1>
+              </div>
+
+              <div class="item-subtitle">
+                I am a sophomore at Thomas Jefferson High School for Science and Technology. I crave learning and thrive in a classroom or self-study environment. I'm also a great team player.
+              </div>
+
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="item-background-image" style="background-image:url(images/programing.jpg)"></div>
+            <div class="item-text">
+
+              <div class="item-heading">
+                <h1>Programing</h1>
+              </div>
+
+              <div class="item-subtitle">
+                I enjoy programming and I know Python, Java, HTML, CSS, Javascript, and C++ (Arduino).
+              </div>
+
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="item-background-image" style="background-image:url(images/electronics.jpg)"></div>
+            <div class="item-text">
+
+              <div class="item-heading">
+                <h1>Electronics</h1>
+              </div>
+
+              <div class="item-subtitle">
+                I like working with microcontrollers, particularly the Arduino Uno. Recently, I built a robot car and customized it to be a personal servant.
+              </div>
+
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="item-background-image" style="background-image:url(images/mechatronics.jpg)"></div>
+            <div class="item-text">
+
+              <div class="item-heading">
+                <h1>Mechatronics</h1>
+              </div>
+
+              <div class="item-subtitle">
+                I plan to go to college for mechatronics, a field of engineering incorporating mechanical, electrical, and programming disciplines. I like developing all parts of a machine, so mechatronics is perfect for me.
+              </div>
+
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="item-background-image" style="background-image:url(images/rocket.jpg)"></div>
+            <div class="item-text">
+
+              <div class="item-heading">
+                <h1>Rocketry</h1>
+              </div>
+
+              <div class="item-subtitle">
+                I am on a TARC team that is building a model rocket. I'm still in the learning phase, but I really enjoy this club. I also keep up with space related news.
+              </div>
+
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="item-background-image" style="background-image:url(images/assistive_tech.jpg)"></div>
+            <div class="item-text">
+
+              <div class="item-heading">
+                <h1>Assistive Technology</h1>
+              </div>
+
+              <div class="item-subtitle">
+                With teammates in my school's assistive technology club, I make games and applications for local elementary schoolers with disabilities. I also walk them through the games, step by step, weekly via Zoom.
+              </div>
+
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="item-background-image" style="background-image:url(images/automobiles.jpg)"></div>
+            <div class="item-text">
+
+              <div class="item-heading">
+                <h1>Automobiles & Solar Car</h1>
+              </div>
+
+              <div class="item-subtitle">
+                I am a car enthusiast, especially regarding teslas. I'm also helping build a life sized solar car with my teammates in my high school for the Solar Car Challenge.
+              </div>
+
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="item-background-image" style="background-image:url(images/robotics.jpg)"></div>
+            <div class="item-text">
+
+              <div class="item-heading">
+                <h1>Robotics</h1>
+              </div>
+
+              <div class="item-subtitle">
+                I love Robotics! I was a key player in my middle school's VEX robotics team. This year I am an underclassman member of my high school's Botball robotics team.
+              </div>
+
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="item-background-image" style="background-image:url(images/stocks.jpg)"></div>
+            <div class="item-text">
+
+              <div class="item-heading">
+                <h1>Stock Market</h1>
+              </div>
+
+              <div class="item-subtitle">
+                I follow the stock market, and I'm a strong day-trader in my school's stock market simulator.
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </body>
+
+  <footer>
+     <div class="credit">
+        Made from scratch by Amith Polineni | 2021
+     </div>
+ </footer>
+
+<script type="text/javascript">
+  const portfolioItems = document.querySelectorAll('.portfolio-item')
+
+  portfolioItems.forEach(item => {
+
+    item.addEventListener('mouseover', () => {
+      /*console.log(item);*/
+      item.childNodes[1].classList.remove('img-brighten')
+      item.childNodes[1].classList.add('img-darken')
+    })
+
+    item.addEventListener('mouseout', () => {
+      item.childNodes[1].classList.remove('img-darken')
+      item.childNodes[1].classList.add('img-brighten')
+    })
+
+  })
+</script>
+
+</html>
