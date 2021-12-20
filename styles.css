@@ -174,7 +174,8 @@ footer {
 .credit {
    font-weight: lighter;
    font-size: 1em;
-   color: black;
+   color: #004158;
+   font-weight: 500;
 }
 
 .social {
