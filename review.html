@@ -196,12 +196,14 @@
         var name = document.getElementById('name').value;
         var color = document.getElementById('color').value;
         var comment = document.getElementById('comment').value;
-
-        set(ref(database, "friend/" + (index + 1)), {
-         name: name,
-         color: color,
-         comment : comment
-         });
+        if(name.length > 0)
+        {
+          set(ref(database, "friend/" + (index + 1)), {
+             name: name,
+             color: color,
+             comment : comment
+          });
+        }
         alert('saved');
         });
 
