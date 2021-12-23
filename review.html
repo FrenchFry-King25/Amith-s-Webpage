@@ -164,10 +164,10 @@
         function loadPosts(start) {
            console.log("loadNum" + loadnum)
            console.log("start" + start)
-           for(let i = start; i < loadnum; i++) {
+           for(let i = (values.length - start - 1); i >= (values.length - loadnum); i--) {
              console.log(i)
              console.log(index)
-               if(i >= index - 1) {
+               if(i < 0) {
                   console.log("done");
                   document.getElementById("load-more-button").innerHTML = "";
                   break;
