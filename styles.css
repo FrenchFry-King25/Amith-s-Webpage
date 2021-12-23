@@ -35,6 +35,8 @@ body {
 
 .nav-bar-name {
    font-size: 1.25em;
+    margin-right: 7px;
+    text-align: right;
 }
 
 .nav-bar-left{
