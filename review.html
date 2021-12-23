@@ -164,6 +164,7 @@
         function loadPosts(start) {
            console.log("loadNum" + loadnum)
            console.log("start" + start)
+           // we want to load the posts from the end of the array so newest appear on the top
            for(let i = (values.length - start - 1); i >= (values.length - loadnum); i--) {
              console.log(i)
              console.log(index)
