@@ -174,6 +174,15 @@ body {
    color: black;
 }
 
+.resume a {
+  color: #00637a;
+  text-decoration: none;
+}
+
+.resume:hover {
+  border-bottom: 1px solid #00637a;
+}
+
 /* Footbar Styles*/
 footer {
    background-color: #75716d;
