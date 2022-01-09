@@ -176,11 +176,13 @@ body {
 
 .resume a {
   color: #00637a;
-  text-decoration: none;
+  transition: color 0.5s;
+  display: flex;
+  justify-content: center;
 }
 
 .resume:hover {
-  border-bottom: 1px solid #00637a;
+  color: #007691;
 }
 
 /* Footbar Styles*/
