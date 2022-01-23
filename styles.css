@@ -104,8 +104,8 @@ body {
   flex-wrap: nowrap;
   height: 100%;
   text-align: center;
-  padding-left: 75px;
-  padding-right: 75px
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .item-heading {
@@ -292,7 +292,7 @@ footer {
    }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
    .portfolio-items {
      display: grid;
      grid-template-columns: 1fr 1fr;
@@ -303,7 +303,7 @@ footer {
    }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
    .portfolio-items {
       display: grid;
      grid-template-columns: 1fr;
