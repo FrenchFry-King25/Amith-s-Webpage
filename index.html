@@ -1,267 +1,314 @@
 <!DOCTYPE html>
-<html>
-  <head lang="en" dir="ltr">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <title>Portfolio | Amith Polineni</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles.css">
+
+<html lang="en">
+  <head>
+    <title>Amith Polineni</title>
+    <meta property="og:title" content="AmithP.com" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Reviews - AmithP.com" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Roboto;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-amith-black);
+        background-color: var(--dl-color-amith-teal);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="icon" href="images/robot_favicon.png">
   </head>
   <body>
-    <div class="container">
-      <div class="nav-bar">
+    <div>
+      <link href="./home.css" rel="stylesheet" />
 
-        <div class="nav-bar-left">
-
-          <div class="nav-bar-link active-nav-link">
-            <a href="/">Portfolio</a>
+      <div class="home-container">
+        <div class="nav home-nav">
+          <div class="logo">
+            <h1 class="home-amithpolineni amithpolineni">Amith Polineni</h1>
           </div>
-
-          <div class="nav-bar-link">
-            <a href="about">About</a>
-          </div>
-
-          <div class="nav-bar-link">
-            <a href="review">Review</a>
-          </div>
-
-        </div>
-
-        <div class="nav-bar-right">
-          <div class="nav-bar-name">
-             AMITH POLINENI
-          </div>
-          <div class="profile-pic">
-            <a href="/"><img src="images/headshot.jpg"></a>
+          <div class="links">
+            <a href="index.html" class="nav-link nav-link-underline">
+              <span>HOME</span>
+            </a>
+            <a href="Resume.pdf" class="nav-link">RESUME</a>
+            <a href="reviews.html" class="nav-link">REVIEWS</a>
           </div>
         </div>
-
-      </div>
-
-      <div class="portfolio-container">
-        <div class="portfolio-items">
-
-          <div class="portfolio-item">
-            <div class="item-background-image" style="background-image:url(images/education.jpg)"></div>
-            <div class="item-text">
-
-              <div class="item-heading">
-                <h1>Education</h1>
-              </div>
-
-              <div class="item-subtitle">
-                I am a sophomore at Thomas Jefferson High School for Science and Technology. I crave learning and thrive in a classroom or self-study environment.
-              </div>
-
-            </div>
+        <div class="home-hero">
+          <div class="home-hero-desc-container">
+            <h1 class="home-hero-name">Amith Polineni</h1>
+            <h1 class="home-hero-jobs">Engineer | Programmer | Web-designer</h1>
           </div>
-
-          <div class="portfolio-item">
-            <div class="item-background-image" style="background-image:url(images/programing.jpg)"></div>
-            <div class="item-text">
-
-              <div class="item-heading">
-                <h1>Programming</h1>
-              </div>
-
-              <div class="item-subtitle">
-                I enjoy programming. I have replicated many games in python and java, and this website is my first dive into HTML. I can code with:
-                <ul>
-                   <li>Python</li>
-                   <li>Java</li>
-                   <li>HTML</li>
-                   <li>CSS</li>
-                   <li>Javascript</li>
-                   <li>C++ (Arduino)</li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="portfolio-item">
-            <div class="item-background-image" style="background-image:url(images/electronics.jpg)"></div>
-            <div class="item-text">
-
-              <div class="item-heading">
-                <h1>Electronics</h1>
-              </div>
-
-              <div class="item-subtitle">
-                I like working with microcontrollers, particularly the Arduino Uno. Recently, I built a robot car and customized it to be a personal servant.
-              </div>
-
-            </div>
-          </div>
-
-          <div class="portfolio-item">
-            <div class="item-background-image" style="background-image:url(images/mechatronics.jpg)"></div>
-            <div class="item-text">
-
-              <div class="item-heading">
-                <h1>Mechatronics</h1>
-              </div>
-
-              <div class="item-subtitle">
-                I plan to go to college for mechatronics, a field of engineering incorporating mechanical, electrical, and programming disciplines. I like developing all parts of a machine, so mechatronics is perfect for me.
-              </div>
-
-            </div>
-          </div>
-
-          <div class="portfolio-item">
-            <div class="item-background-image" style="background-image:url(images/rocket.jpg)"></div>
-            <div class="item-text">
-
-              <div class="item-heading">
-                <h1>Rocketry</h1>
-              </div>
-
-              <div class="item-subtitle">
-                I am on a <a href="https://rocketcontest.org/" target="_blank" rel="noopener noreferrer">TARC</a> team that is building a model rocket. I'm still in the learning phase, but I really enjoy this club. I also keep up with space related news.
-              </div>
-
-            </div>
-          </div>
-
-          <div class="portfolio-item">
-            <div class="item-background-image" style="background-image:url(images/assistive_tech.jpg)"></div>
-            <div class="item-text">
-
-              <div class="item-heading">
-                <h1>Assistive Technology</h1>
-              </div>
-
-              <div class="item-subtitle">
-                With teammates in my school's assistive technology club, I make games and applications for local elementary schoolers with disabilities. I also walk them through the games, step by step, weekly via Zoom.
-                <br>
-                Also see these articles on my work in the club: 
-                <a href="https://www.fox5dc.com/video/1025707" target="_blank" rel="noopener noreferrer">Fox5</a> 
-                <a href="https://wtop.com/fairfax-county/2022/01/fairfax-co-school-club-connects-high-schoolers-with-nonverbal-elementary-students/" target="_blank" rel="noopener noreferrer">WTOP</a>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="portfolio-item">
-            <div class="item-background-image" style="background-image:url(images/automobiles.jpg)"></div>
-            <div class="item-text">
-
-              <div class="item-heading">
-                <h1>Automobiles & Solar Car</h1>
-              </div>
-
-              <div class="item-subtitle">
-                I am a car enthusiast, especially regarding teslas. I'm also helping build a life sized solar car with my teammates in my high school for the
-                <a href="https://www.solarcarchallenge.org" target="_blank" rel="noopener noreferrer">Solar Car Challenge</a>.
-              </div>
-
-            </div>
-          </div>
-
-          <div class="portfolio-item">
-            <div class="item-background-image" style="background-image:url(images/robotics.jpg)"></div>
-            <div class="item-text">
-
-              <div class="item-heading">
-                <h1>Robotics</h1>
-              </div>
-
-              <div class="item-subtitle">
-                I love Robotics! I was a key player in my middle school's VEX robotics team. This year I am an underclassman member of my high school's Botball robotics team.
-              </div>
-
-            </div>
-          </div>
-
-          <div class="portfolio-item">
-            <div class="item-background-image" style="background-image:url(images/tinyhouse.jpg)"></div>
-            <div class="item-text">
-
-              <div class="item-heading">
-                <h1>Team Tiny House</h1>
-              </div>
-
-              <div class="item-subtitle">
-                I'm an integral member of my school's Team Tiny House club: I'm the leader of the Interior Construction subteam and I made and maintain the website. Please learn more about this project at <a href="https://teamtinyhouse.org" target="_blank" rel="noopener noreferrer">teamtinyhouse.org</a>.
-              </div>
-
-            </div>
-          </div>
-
+          <img
+            alt="image"
+            src="images/amith-nobg.png"
+            class="home-amith"
+          />
         </div>
+        <div class="home-container1">
+          <h1 class="home-text01">
+            <span class="home-text02">I&apos;m just a</span>
+            <span class="home-text03">high-schooler</span>
+            <span class="home-text04">saving the world, one</span>
+            <span class="home-text05">robot</span>
+            <span class="home-text06">at a time.</span>
+          </h1>
+        </div>
+        <div class="home-passions-container">
+          <h1 class="page-tittle">Passions</h1>
+          <div class="home-passions">
+            <div class="passion">
+              <h1 class="passion-name">Mechatronics</h1>
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1582043568773-a7a2b57239f5?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDMxfHxtYWNoaW5lfGVufDB8fHx8MTY1NDk5MzgzMg&amp;ixlib=rb-1.2.1&amp;w=1100"
+                class="pasison-img"
+              />
+              <span class="pasison-txt">
+                <span>
+                  I plan to work as a Mechatronics Engineer when I get older. I love everything about robots including mechanical design, electrical components, and programming, so mechatronics is the perfect industry for me. 
+                </span>
+                <br />
+                <span></span>
+              </span>
+            </div>
+            <div class="passion">
+              <h1 class="passion-name">Programming</h1>
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1594904351111-a072f80b1a71?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDV8fGNvZGV8ZW58MHx8fHwxNjU0OTk0OTY4&amp;ixlib=rb-1.2.1&amp;w=1100"
+                class="pasison-img"
+              />
+              <span class="pasison-txt">
+                <span>
+                  I treat programming as a fun challenge, similar to puzzles/riddles. I’m fairly quick at finding efficient solutions to programming problems. Currently, I’m improving my Artificial Intelligence skills to make better algorithms for my robots. 
+                <span></span>
+              </span>
+            </div>
+            <div class="passion">
+              <h1 class="passion-name">Websites</h1>
+              <img
+                alt="image"
+                src="images/web.png"
+                class="pasison-img"
+              />
+              <span class="pasison-txt">
+                <span>
+                  I’ve recently fallen in love with web-development, and my skills are improving with every website I make. I’m still no expert, but I consider my designs visually appealing, responsive, and I’m tinkering with animations. 
+                </span>
+                <br />
+                <span></span>
+                <br />
+                <span></span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="home-stats">
+          <div class="stat">
+            <h1 class="stat-num">200+</h1>
+            <h1 class="stat-name">Hours Volunteered</h1>
+            <span class="stat-desc">
+              Team Tiny House, tutoring for a non-profit, local library, and
+              community events.
+            </span>
+          </div>
+          <div class="stat">
+            <h1 class="stat-num">9</h1>
+            <h1 class="stat-name">Languages</h1>
+            <span class="stat-desc">
+              3 normal languages (English, Spanish, Telugu) and 6 Programing
+              languages (Java, Python, HTML, CSS, Javascript, and C++)
+            </span>
+          </div>
+          <div class="stat">
+            <h1 class="stat-num">3</h1>
+            <h1 class="stat-name">Websites</h1>
+            <span class="stat-desc">
+              I designed and maintain 3 websites: this one, Team Tiny House, and
+              Botball Robotics.
+            </span>
+          </div>
+        </div>
+        <div class="home-activities">
+          <h1 class="page-tittle">Clubs</h1>
+          <div class="home-clubs">
+            <div class="club">
+              <h1 class="club-name">Team Tiny House</h1>
+              <img
+                alt="image"
+                src="images/tinyhouse.jpg"
+                class="club-img"
+              />
+              <span class="home-club-desc club-desc">
+                <span>
+                  At Team Tiny House, we extensively research, scrupulously design, and robustly construct sustainable tiny houses. I’m the co-president of the team and bridge the gap between the various engineering sub-teams. With all the hours I’ve put into this project, I would consider myself an expert in home construction.
+                </span>
+                <br />
+                <span></span>
+              </span>
+              <a
+                href="https://teamtinyhouse.org"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="club-link"
+              >
+                <span>teamtinyhouse.org</span>
+              </a>
+            </div>
+            <div class="club">
+              <h1 class="club-name">Botball Robotics</h1>
+              <img
+                alt="image"
+                src="images/botball.jpg"
+                class="club-img"
+              />
+              <span class="club-desc">
+                <span>
+                  I’m currently the webmaster of my Botball Robotics team, where we gather every January to design, construct, and compete a robot in the annual Botball Robotics competition. Robotics is one of my biggest passions, and this team is the perfect place to pursue it. 
+                </span>
+                <br />
+                <span></span>
+              </span>
+              <a
+                href="https://tj-botball.amithpolineni.repl.co/"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="club-link"
+              >
+                <span>Website</span>
+              </a>
+            </div>
+            <div class="club">
+              <h1 class="club-name">Assistive Technology</h1>
+              <img
+                alt="image"
+                src="images/atc.jpg"
+                class="club-img"
+              />
+              <span class="club-desc">
+                <span>
+                  At Assistive Technology Club, we build accessible HTML games for elementary schoolers with disabilities like limited motor skills or muteness. Also, we spread awareness on how to make digital technology more accessible for everyone.   
+                </span>
+              </span>
+            </div>
+            <div class="club">
+              <h1 class="club-name"><span>Rocketry</span></h1>
+              <img
+                alt="image"
+                src="images/rocketry.png"
+                class="club-img"
+              />
+              <span class="club-desc">
+                <span>
+                  I’m a dedicated member of a The American Rocketry Challenge (TARC) team. We build ~3ft model rockets that must launch raw eggs to ~800ft and land them safely with a parachute. Over the past year, I’ve learned a ton about constructing a rocket and its flight mechanics. 
+
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+          <img
+            alt="image"
+            src="images/amith_square.png"
+            class="footerImg"
+          />
+          <span class="footerCredit">© Amith Polineni | 2022</span>
+          <div class="footerContact">
+            <div class="footerSocials">
+              <a
+                href="https://www.linkedin.com/in/amithpolineni/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <svg viewBox="0 0 877.7142857142857 1024" class="social-icon">
+                  <path
+                    d="M135.429 808h132v-396.571h-132v396.571zM276 289.143c-0.571-38.857-28.571-68.571-73.714-68.571s-74.857 29.714-74.857 68.571c0 37.714 28.571 68.571 73.143 68.571h0.571c46.286 0 74.857-30.857 74.857-68.571zM610.286 808h132v-227.429c0-121.714-65.143-178.286-152-178.286-70.857 0-102.286 39.429-119.429 66.857h1.143v-57.714h-132s1.714 37.143 0 396.571v0h132v-221.714c0-11.429 0.571-23.429 4-32 9.714-23.429 31.429-48 68-48 47.429 0 66.286 36 66.286 89.714v212zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com/AmithPolineni"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <svg viewBox="0 0 877.7142857142857 1024" class="social-icon">
+                  <path
+                    d="M731.429 348.571c-21.714 9.714-44.571 16-69.143 19.429 25.143-14.857 44-38.857 53.143-66.857-23.429 13.714-49.143 24-76.571 29.143-21.714-23.429-53.143-37.714-87.429-37.714-66.286 0-120 53.714-120 120 0 9.143 0.571 18.857 2.857 27.429-100-5.143-188.571-52.571-248-125.714-10.286 17.714-16.571 38.857-16.571 60.571 0 41.714 19.429 78.286 52 100-20-0.571-38.857-6.286-57.143-14.857v1.143c0 58.286 44 106.857 98.857 117.714-10.286 2.857-18.286 4.571-29.143 4.571-7.429 0-14.857-1.143-22.286-2.286 15.429 47.429 59.429 82.286 112 83.429-41.143 32-92.571 51.429-149.143 51.429-9.714 0-19.429-0.571-28.571-1.714 53.143 33.714 116 53.714 184 53.714 220.571 0 341.714-182.857 341.714-341.714 0-5.143 0-10.286-0.571-15.429 23.429-16.571 44-37.714 60-62.286zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/Amith.Polineni25/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <svg viewBox="0 0 877.7142857142857 1024" class="social-icon">
+                  <path
+                    d="M713.143 73.143c90.857 0 164.571 73.714 164.571 164.571v548.571c0 90.857-73.714 164.571-164.571 164.571h-107.429v-340h113.714l17.143-132.571h-130.857v-84.571c0-38.286 10.286-64 65.714-64l69.714-0.571v-118.286c-12-1.714-53.714-5.143-101.714-5.143-101.143 0-170.857 61.714-170.857 174.857v97.714h-114.286v132.571h114.286v340h-304c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://github.com/FrenchFry-King25"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <svg viewBox="0 0 877.7142857142857 1024" class="social-icon">
+                  <path
+                    d="M296.571 685.714v0c1.143-1.714 0.571-5.143-1.714-7.429-2.857-2.286-6.286-2.857-8-1.143-1.143 1.714-0.571 5.143 1.714 7.429 2.857 2.286 6.286 2.857 8 1.143zM280.571 662.286c-1.714-2.286-4.571-3.429-6.857-2.286-1.714 1.143-1.714 4.571 0 6.857 2.286 2.857 5.143 4 6.857 2.857v0c1.714-1.143 1.714-4.571 0-7.429zM257.143 639.429v0c0.571-1.143-0.571-3.429-2.857-4.571-1.714-0.571-4-0.571-4.571 1.143-1.143 1.714 0 3.429 2.286 4.571 2.286 0.571 4.571 0.571 5.143-1.143zM269.143 652.571v0c1.143-1.143 1.143-4-1.143-5.714-1.714-2.286-4.571-2.857-5.714-1.714-1.714 1.714-1.143 4 0.571 6.286 1.714 1.714 4.571 2.857 6.286 1.143zM318.286 695.429v0c0.571-2.286-1.714-5.143-5.143-6.286s-6.286 0-7.429 2.286c-0.571 2.286 1.714 5.143 5.143 6.286s6.286 0 7.429-2.286zM342.286 697.143v0c0-2.286-2.857-4.571-6.857-4.571-3.429 0-5.714 2.286-5.714 4.571s2.857 4.571 6.286 4.571 6.286-2.286 6.286-4.571zM364.571 693.143v0c-0.571-2.286-4-3.429-7.429-2.857s-5.714 2.857-5.143 5.143 3.429 4 6.857 3.429 5.714-3.429 5.714-5.714zM731.429 512c0-161.714-130.857-292.571-292.571-292.571s-292.571 130.857-292.571 292.571c0 129.143 84 238.857 200 277.714 14.857 2.857 20-6.286 20-14.286 0-6.857 0-29.714-0.571-54.286 0 0-81.143 17.714-98.286-34.857 0 0-13.143-33.714-32.571-42.286 0 0-26.286-18.286 2.286-18.286 0 0 28.571 2.286 44.571 30.286 25.714 45.143 68.571 32 85.143 24.571 2.857-18.857 10.286-32 18.857-39.429-65.143-7.429-133.714-32.571-133.714-144.571 0-32 11.429-57.714 30.286-78.286-2.857-7.429-13.143-37.143 2.857-77.714 24.571-7.429 80.571 30.286 80.571 30.286 23.429-6.857 48-9.714 73.143-9.714s49.714 2.857 73.143 9.714c0 0 56-37.714 80.571-30.286 16 40.571 5.714 70.286 2.857 77.714 18.857 20.571 30.286 46.286 30.286 78.286 0 112.571-68.571 137.143-133.714 144.571 10.286 9.143 20 26.857 20 54.286 0 38.857-0.571 70.286-0.571 80 0 8 5.143 17.143 20 14.286 116-38.857 200-148.571 200-277.714zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/amith_polineni/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <svg
+                  viewBox="0 0 877.7142857142857 1024"
+                  class="home-footer-social4 social-icon"
+                >
+                  <path
+                    d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            <a
+              href="mailto:amithpolineni@gmail.com?subject="
+              class="footerEmail"
+            >
+              Email: amithpolineni@gmail.com
+            </a>
+          </div>
+        </footer>
       </div>
     </div>
-
-    <footer>
-       <div class="credit">
-          Made from scratch by Amith Polineni | 2021
-       </div>
-       <div class="socials">
-             <div class = "social">
-               <a href="https://www.linkedin.com/in/amithpolineni/" target="_blank" rel="noopener noreferrer">
-                  <div class="icon">
-                     <i class="fa fa-linkedin"></i>
-                  </div>
-                 <span>
-                    @Amith Polineni
-                 </span>
-               </a>
-            </div>
-             <div class = "social">
-               <a href="https://www.facebook.com/Amith.Polineni25/" target="_blank" rel="noopener noreferrer">
-                 <div class="icon">
-                  <i class="fa fa-facebook"></i>
-               </div>
-               <span>
-                  @Amith Polineni
-               </span>
-              </a>
-           </div>
-             <div class = "social">
-               <a href="https://github.com/FrenchFry-King25" target="_blank" rel="noopener noreferrer">
-                 <div class="icon">
-                    <i class="fa fa-github"></i>
-                 </div>
-                 <span>
-                     @FrenchFry-King25
-                 </span>
-               </a>
-            </div>
-            <div class = "social">
-               <a href="mailto: vishnupolineni@outlook.com" target="_blank" rel="noopener noreferrer">
-                  <div class="icon">
-                    <i class="fa fa-envelope"></i>
-                  </div>
-                  <span>
-                     vishnupolineni@outlook.com
-                  </span>
-              </a>
-           </div>
-       </div>
-   </footer>
-
-   <script type="text/javascript">
-     const portfolioItems = document.querySelectorAll('.portfolio-item')
-
-      portfolioItems.forEach(item => {
-
-       item.addEventListener('mouseover', () => {
-         /*console.log(item);*/
-         item.childNodes[1].classList.remove('img-brighten')
-         item.childNodes[1].classList.add('img-darken')
-       })
-
-       item.addEventListener('mouseout', () => {
-         item.childNodes[1].classList.remove('img-darken')
-         item.childNodes[1].classList.add('img-brighten')
-       })
-
-     })
-   </script>
-
   </body>
-
 </html>
