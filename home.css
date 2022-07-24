@@ -21,9 +21,9 @@
   max-height: 700px;
   min-height: 500px;
   align-items: center;
-  margin-bottom: var(--dl-space-space-threeunits);
+  margin-bottom: var(--three);
   flex-direction: column;
-  padding-bottom: var(--dl-space-space-threeunits);
+  padding-bottom: var(--three);
   justify-content: center;
 }
 .home-hero-desc-container {
@@ -38,16 +38,16 @@
   flex-direction: column;
 }
 .home-hero-name {
-  color: var(--dl-color-amith-white);
+  color: var(--white);
   width: 100%;
   font-size: 4em;
   text-align: center;
-  padding-top: var(--dl-space-space-unit);
-  padding-left: var(--dl-space-space-twounits);
+  padding-top: var(--one);
+  padding-left: var(--two);
   border-radius: 30px;
-  padding-right: var(--dl-space-space-twounits);
-  padding-bottom: var(--dl-space-space-unit);
-  background-color: var(--dl-color-amith-blue);
+  padding-right: var(--two);
+  padding-bottom: var(--one);
+  background-color: var(--blue);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -56,11 +56,11 @@
   font-size: 1.75em;
   text-align: center;
   padding-top: 5px;
-  padding-left: var(--dl-space-space-unit);
+  padding-left: var(--one);
   border-radius: 50px;
-  padding-right: var(--dl-space-space-unit);
+  padding-right: var(--one);
   padding-bottom: 5px;
-  background-color: var(--dl-color-amith-yellow);
+  background-color: var(--yellow);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-left-radius: 20px;
@@ -75,7 +75,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: var(--dl-space-space-fourunits);
+  margin-bottom: var(--four);
   justify-content: center;
 }
 .home-text01 {
@@ -84,11 +84,11 @@
   max-width: 1000px;
   box-shadow: 0px 7px 0px 0px #fdb035,0px -7px 0px 0px #fdb035;
   text-align: center;
-  padding-top: var(--dl-space-space-halfunit);
-  padding-left: var(--dl-space-space-twounits);
-  padding-right: var(--dl-space-space-twounits);
-  padding-bottom: var(--dl-space-space-halfunit);
-  background-color: var(--dl-color-amith-white);
+  padding-top: var(--half);
+  padding-left: var(--two);
+  padding-right: var(--two);
+  padding-bottom: var(--half);
+  background-color: var(--white);
 }
 .home-text02 {
   font-weight: 400;
@@ -118,10 +118,10 @@
   flex: 0 0 auto;
   width: 100%;
   display: grid;
-  padding: var(--dl-space-space-twounits);
-  grid-row-gap: var(--dl-space-space-threeunits);
+  padding: var(--two);
+  grid-row-gap: var(--three);
   justify-items: center;
-  grid-column-gap: var(--dl-space-space-threeunits);
+  grid-column-gap: var(--three);
   grid-template-columns: 1fr 1fr 1fr;
 }
 .home-passion-img2 {
@@ -131,13 +131,13 @@
 .home-stats {
   width: 90%;
   display: grid;
-  padding: var(--dl-space-space-threeunits);
-  grid-gap: var(--dl-space-space-twounits);
+  padding: var(--three);
+  grid-gap: var(--two);
   max-width: 1400px;
-  margin-top: var(--dl-space-space-threeunits);
+  margin-top: var(--three);
   border-radius: 4px;
-  margin-bottom: var(--dl-space-space-threeunits);
-  background-color: var(--dl-color-amith-white);
+  margin-bottom: var(--three);
+  background-color: var(--white);
   grid-template-columns: 1fr 1fr 1fr;
 }
 .home-activities {
@@ -145,7 +145,7 @@
   width: 100%;
   display: flex;
   max-width: 1200px;
-  margin-top: var(--dl-space-space-threeunits);
+  margin-top: var(--three);
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -154,8 +154,8 @@
   flex: 0 0 auto;
   width: 100%;
   display: grid;
-  padding: var(--dl-space-space-threeunits);
-  grid-gap: var(--dl-space-space-threeunits);
+  padding: var(--three);
+  grid-gap: var(--three);
   align-items: center;
   justify-content: center;
   grid-template-columns: 1fr 1fr;
@@ -171,12 +171,12 @@
     width: 400px;
   }
   .home-passions {
-    padding-left: var(--dl-space-space-unit);
-    padding-right: var(--dl-space-space-unit);
+    padding-left: var(--one);
+    padding-right: var(--one);
   }
   .home-clubs {
-    padding-left: var(--dl-space-space-unit);
-    padding-right: var(--dl-space-space-unit);
+    padding-left: var(--one);
+    padding-right: var(--one);
   }
 }
 @media(max-width: 767px) {
@@ -184,13 +184,13 @@
     height: 500px;
   }
   .home-passions {
-    padding-left: var(--dl-space-space-threeunits);
-    padding-right: var(--dl-space-space-threeunits);
+    padding-left: var(--three);
+    padding-right: var(--three);
     grid-template-columns: 1fr;
   }
   .home-stats {
-    padding-left: var(--dl-space-space-twounits);
-    padding-right: var(--dl-space-space-twounits);
+    padding-left: var(--two);
+    padding-right: var(--two);
     grid-template-columns: 1fr 1fr;
   }
   .home-clubs {
@@ -199,11 +199,11 @@
 }
 @media(max-width: 479px) {
   .home-nav {
-    padding-top: var(--dl-space-space-halfunit);
-    padding-bottom: var(--dl-space-space-halfunit);
+    padding-top: var(--half);
+    padding-bottom: var(--half);
   }
   .home-hero {
-    margin-top: var(--dl-space-space-oneandhalfunits);
+    margin-top: var(--onehalf);
     padding-top: 0px;
     flex-direction: column;
   }
@@ -222,14 +222,14 @@
     width: 90%;
   }
   .home-passions {
-    padding-left: var(--dl-space-space-unit);
-    padding-right: var(--dl-space-space-unit);
+    padding-left: var(--one);
+    padding-right: var(--one);
   }
   .home-stats {
-    padding-top: var(--dl-space-space-twounits);
-    padding-left: var(--dl-space-space-unit);
-    padding-right: var(--dl-space-space-unit);
-    padding-bottom: var(--dl-space-space-twounits);
+    padding-top: var(--two);
+    padding-left: var(--one);
+    padding-right: var(--one);
+    padding-bottom: var(--two);
     grid-template-columns: 1fr;
   }
 }

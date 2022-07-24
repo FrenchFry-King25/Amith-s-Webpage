@@ -17,9 +17,9 @@
   max-width: 1200px;
   margin-top: 60px;
   align-items: center;
-  padding-top: var(--dl-space-space-threeunits);
-  padding-left: var(--dl-space-space-threeunits);
-  padding-right: var(--dl-space-space-threeunits);
+  padding-top: var(--three);
+  padding-left: var(--three);
+  padding-right: var(--three);
   flex-direction: column;
 }
 .reviews-review-maker {
@@ -28,10 +28,10 @@
   display: grid;
   max-width: 1200px;
   align-items: center;
-  padding-top: var(--dl-space-space-threeunits);
+  padding-top: var(--three);
   justify-items: center;
-  padding-bottom: var(--dl-space-space-threeunits);
-  background-color: var(--dl-color-amith-blue);
+  padding-bottom: var(--three);
+  background-color: var(--blue);
   grid-template-columns: 1fr 1fr;
 }
 .reviews-review-prompt {
@@ -44,12 +44,12 @@
   justify-content: center;
 }
 .reviews-review-prompt-name {
-  color: var(--dl-color-amith-black);
+  color: var(--black);
   padding-top: 3px;
   padding-left: var(--dl-space-space-unit);
   padding-right: var(--dl-space-space-unit);
   padding-bottom: 3px;
-  background-color: var(--dl-color-amith-white);
+  background-color: var(--white);
 }
 .reviews-name-and-color {
   flex: 0 0 auto;
@@ -60,11 +60,11 @@
 }
 .reviews-name {
   transition: 0.3s;
-  border-color: var(--dl-color-amith-black);
+  border-color: var(--black);
   border-width: 2px;
   padding-left: var(--dl-space-space-halfunit);
   border-radius: 10px;
-  background-color: var(--dl-color-amith-white);
+  background-color: var(--white);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -73,10 +73,10 @@
 }
 .reviews-color {
   transition: 0.3s;
-  border-color: var(--dl-color-amith-black);
+  border-color: var(--black);
   border-width: 2px;
   border-radius: 10px;
-  background-color: var(--dl-color-amith-white);
+  background-color: var(--white);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -86,26 +86,26 @@
 .reviews-comment1 {
   padding: var(--dl-space-space-halfunit);
   transition: 0.3s;
-  border-color: var(--dl-color-amith-black);
+  border-color: var(--black);
   border-width: 2px;
   border-radius: 10px;
-  background-color: var(--dl-color-amith-white);
+  background-color: var(--white);
 }
 .reviews-comment1:hover {
   background-color: #FFF;
 }
 .reviews-post {
   font-size: 1.25rem;
-  margin-top: var(--dl-space-space-twounits);
+  margin-top: var(--two);
   transition: 0.3s;
   padding-top: var(--dl-space-space-halfunit);
-  border-color: var(--dl-color-amith-black);
+  border-color: var(--black);
   border-width: 2px;
   padding-left: var(--dl-space-space-unit);
   border-radius: 10px;
   padding-right: var(--dl-space-space-unit);
   padding-bottom: var(--dl-space-space-halfunit);
-  background-color: var(--dl-color-amith-yellow);
+  background-color: var(--yellow);
 }
 .reviews-post:hover {
   background-color: #fbbf5e;
@@ -125,9 +125,9 @@
   max-width: 1200px;
   margin-top: 60px;
   align-items: center;
-  padding-top: var(--dl-space-space-threeunits);
-  padding-left: var(--dl-space-space-threeunits);
-  padding-right: var(--dl-space-space-threeunits);
+  padding-top: var(--three);
+  padding-left: var(--three);
+  padding-right: var(--three);
   flex-direction: column;
 }
 .reviews-footer-social4 {
@@ -156,16 +156,16 @@
 }
 .reviews-loadMore {
   font-size: 1.25rem;
-  margin-bottom: var(--dl-space-space-twounits);
+  margin-bottom: var(--two);
   transition: 0.3s;
   padding-top: var(--dl-space-space-halfunit);
-  border-color: var(--dl-color-amith-black);
+  border-color: var(--black);
   border-width: 2px;
   padding-left: var(--dl-space-space-unit);
   border-radius: 10px;
   padding-right: var(--dl-space-space-unit);
   padding-bottom: var(--dl-space-space-halfunit);
-  background-color: var(--dl-color-amith-yellow);
+  background-color: var(--yellow);
 }
 .reviews-post:hover {
   background-color: #fbbf5e;
@@ -178,12 +178,12 @@
 
 @media(max-width: 991px) {
   .reviews-special-reviews {
-    padding-left: var(--dl-space-space-twounits);
-    padding-right: var(--dl-space-space-twounits);
+    padding-left: var(--two);
+    padding-right: var(--two);
   }
   .reviews-all-reviews {
-    padding-left: var(--dl-space-space-twounits);
-    padding-right: var(--dl-space-space-twounits);
+    padding-left: var(--two);
+    padding-right: var(--two);
   }
 }
 @media(max-width: 767px) {
@@ -211,7 +211,7 @@
     margin-bottom: var(--dl-space-space-halfunit);
   }
   .reviews-review-maker {
-    grid-row-gap: var(--dl-space-space-twounits);
+    grid-row-gap: var(--two);
     grid-template-columns: 1fr;
   }
 }
