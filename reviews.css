@@ -46,8 +46,8 @@
 .reviews-review-prompt-name {
   color: var(--black);
   padding-top: 3px;
-  padding-left: var(--dl-space-space-unit);
-  padding-right: var(--dl-space-space-unit);
+  padding-left: var(--one);
+  padding-right: var(--one);
   padding-bottom: 3px;
   background-color: var(--white);
 }
@@ -62,7 +62,7 @@
   transition: 0.3s;
   border-color: var(--black);
   border-width: 2px;
-  padding-left: var(--dl-space-space-halfunit);
+  padding-left: var(--half);
   border-radius: 10px;
   background-color: var(--white);
   border-top-right-radius: 0;
@@ -84,7 +84,7 @@
   background-color: #FFF;
 }
 .reviews-comment1 {
-  padding: var(--dl-space-space-halfunit);
+  padding: var(--half);
   transition: 0.3s;
   border-color: var(--black);
   border-width: 2px;
@@ -98,13 +98,13 @@
   font-size: 1.25rem;
   margin-top: var(--two);
   transition: 0.3s;
-  padding-top: var(--dl-space-space-halfunit);
+  padding-top: var(--half);
   border-color: var(--black);
   border-width: 2px;
-  padding-left: var(--dl-space-space-unit);
+  padding-left: var(--one);
   border-radius: 10px;
-  padding-right: var(--dl-space-space-unit);
-  padding-bottom: var(--dl-space-space-halfunit);
+  padding-right: var(--one);
+  padding-bottom: var(--half);
   background-color: var(--yellow);
 }
 .reviews-post:hover {
@@ -158,13 +158,13 @@
   font-size: 1.25rem;
   margin-bottom: var(--two);
   transition: 0.3s;
-  padding-top: var(--dl-space-space-halfunit);
+  padding-top: var(--half);
   border-color: var(--black);
   border-width: 2px;
-  padding-left: var(--dl-space-space-unit);
+  padding-left: var(--one);
   border-radius: 10px;
-  padding-right: var(--dl-space-space-unit);
-  padding-bottom: var(--dl-space-space-halfunit);
+  padding-right: var(--one);
+  padding-bottom: var(--half);
   background-color: var(--yellow);
 }
 .reviews-post:hover {
@@ -188,16 +188,16 @@
 }
 @media(max-width: 767px) {
   .reviews-special-reviews {
-    padding-left: var(--dl-space-space-unit);
-    padding-right: var(--dl-space-space-unit);
+    padding-left: var(--one);
+    padding-right: var(--one);
   }
   .reviews-review-prompt {
     align-items: center;
     justify-content: center;
   }
   .reviews-all-reviews {
-    padding-left: var(--dl-space-space-unit);
-    padding-right: var(--dl-space-space-unit);
+    padding-left: var(--one);
+    padding-right: var(--one);
   }
 }
 @media(max-width: 479px) {
@@ -208,7 +208,7 @@
     padding-top: 0px;
   }
   .reviews-face {
-    margin-bottom: var(--dl-space-space-halfunit);
+    margin-bottom: var(--half);
   }
   .reviews-review-maker {
     grid-row-gap: var(--two);
