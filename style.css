@@ -192,7 +192,6 @@
   height: 300px;
   object-fit: cover;
   border-radius: 0px;
-  transform: rotate(-30deg);
   animation-duration: 5s;
   animation-name: rotate;
   animation-iteration-count: infinite;
@@ -222,7 +221,6 @@
   height: 200px;
   object-fit: cover;
   border-radius: 0px;
-  transform: rotate(-10deg);
   animation-duration: 3s;
   animation-name: rotate2;
   animation-iteration-count: infinite;
@@ -551,7 +549,14 @@
 
   .club-img {
     right: -30px;
+    animation: none;
   }
+
+  .club-img2 {
+    animation: none;
+    top: 615px;
+  }
+  
   .club-desc {
     width: 90%;
     left: 5%;
