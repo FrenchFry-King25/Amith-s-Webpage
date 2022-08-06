@@ -155,13 +155,11 @@
   width: 100%;
   display: grid;
   padding: var(--three);
-  grid-gap: var(--three);
+  grid-gap: var(--four);
   align-items: center;
   justify-content: center;
-  grid-template-columns: 1fr 1fr;
-}
-.home-club-desc {
-  padding-bottom: 36px;
+  margin-top: 50px;
+  /* grid-template-columns: 1fr 1fr; */
 }
 .home-footer-social4 {
   text-decoration: none;
