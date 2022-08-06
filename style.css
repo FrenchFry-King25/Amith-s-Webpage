@@ -192,7 +192,7 @@
   height: 300px;
   object-fit: cover;
   border-radius: 0px;
-  animation-duration: 5s;
+  animation-duration: 6s;
   animation-name: rotate;
   animation-iteration-count: infinite;
   border: 3px;
@@ -221,7 +221,7 @@
   height: 200px;
   object-fit: cover;
   border-radius: 0px;
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-name: rotate2;
   animation-iteration-count: infinite;
 }
