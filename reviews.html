@@ -263,11 +263,20 @@
       values = Object.values(data);
       index = values.length + 1
 
-      console.log(values)
+      // console.log(values)
       document.getElementById("randComments").innerHTML = "";
       document.getElementById("allComments").innerHTML = "";
       loadRandos();
       loadPosts(0);
+    });
+
+    const starCountRef2 = ref(database, "waitlist/");
+    var waitList_index = 0;
+    onValue(starCountRef2, (snapshot) => {
+      var data = snapshot.val();
+      //console.log(data);
+      values = Object.values(data);
+      waitList_index += values.length
     });
 
     document.getElementById("load-more").addEventListener('click', () => {
@@ -346,7 +355,7 @@
       var color = document.getElementById('color').value;
       var comment = document.getElementById('comment').value;
       if (name.length > 0) {
-        set(ref(database, "waitlist/" + (index + 1)), {
+        set(ref(database, "waitlist/" + (waitList_index + index + 1)), {
           name: name,
           color: color,
           comment: comment
