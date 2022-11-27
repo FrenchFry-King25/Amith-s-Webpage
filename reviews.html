@@ -268,8 +268,8 @@
     onValue(starCountRef2, (snapshot) => {
       var data = snapshot.val();
       //console.log(data);
-      values = Object.values(data);
-      waitList_index += values.length
+      WaitlistValues = Object.values(data);
+      waitList_index += WaitlistValues.length
     });
 
     document.getElementById("load-more").addEventListener('click', () => {
