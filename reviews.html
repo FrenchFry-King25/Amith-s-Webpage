@@ -348,7 +348,7 @@
       var color = document.getElementById('color').value;
       var comment = document.getElementById('comment').value;
       if (name.length > 0) {
-        set(ref(database, "waitlist/" + (waitList_index + index + 1)), {
+        set(ref(database, "waitlist/" + name), {
           name: name,
           color: color,
           comment: comment
