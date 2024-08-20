@@ -89,7 +89,7 @@
 }
 
 .home-text01 {
-  width: 90%;
+  /* width: 90%; */
   z-index: 2;
   max-width: 1000px;
   box-shadow: 0px 7px 0px 0px #fdb035, 0px -7px 0px 0px #fdb035;
@@ -97,8 +97,11 @@
   padding-top: var(--half);
   padding-left: var(--two);
   padding-right: var(--two);
-  padding-bottom: var(--half);
+  padding-bottom: var(--one);
   background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home-text02 {
@@ -119,6 +122,29 @@
 
 .home-text06 {
   font-weight: 400;
+}
+
+.home-memories-container {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  max-width: 1200px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.home-memories {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+  grid-row-gap: var(--one);
+  grid-column-gap: var(--one);
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .home-passions-container {
@@ -217,6 +243,10 @@
     padding-right: var(--two);
     grid-template-columns: 1fr 1fr;
   }
+  
+  .home-memories {
+    grid-template-columns: 1fr; 
+  }
 }
 
 @media(max-width: 479px) {
@@ -244,6 +274,8 @@
 
   .home-hero-jobs {
     font-size: 1.25em;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .home-amith {
@@ -261,5 +293,12 @@
     padding-right: var(--one);
     padding-bottom: var(--two);
     grid-template-columns: 1fr;
+  }
+
+  .home-text01 {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 28px;
   }
 }

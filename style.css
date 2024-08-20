@@ -115,6 +115,14 @@
   background-color: var(--blue);
 }
 
+.memoryImage {
+  width: 100%;
+  border-width: 7px;
+  border-color: var(--blue);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
 .passion {
   flex: 0 0 auto;
   height: auto;
@@ -360,6 +368,20 @@
   fill: var(--yellow);
 }
 
+.social-icon2 {
+  fill: var(--blue);
+  width: 50px;
+  height: 50px;
+  transition: 0.3s;
+  margin-left: var(--half);
+  margin-right: var(--half);
+  text-decoration: none;
+}
+
+.social-icon2:hover {
+  fill: var(--yellow);
+}
+
 .social\.-icon {
   width: 32px;
   height: 32px;
@@ -417,6 +439,17 @@
 
 .reviewInput {
   color: var(--white);
+}
+
+.reviewButtonContainer {
+  background-color: var(--blue);
+  color:var(--white);
+  margin-top: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
 }
 
 .footerSocials {
@@ -531,16 +564,6 @@
 
   .stat-name {
     text-align: center;
-  }
-
-  .social-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .social\.-icon {
-    width: 32px;
-    height: 32px;
   }
 
   .comment {
