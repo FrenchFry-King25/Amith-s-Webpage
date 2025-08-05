@@ -301,3 +301,57 @@
     padding-right: 0;
   }
 }
+
+
+
+/* AUG 2025 Updates (projects focused) */
+
+#projects {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project {
+  margin-bottom: 2.5rem;
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-images {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.project-images img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #007acc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #005fa3;
+}
