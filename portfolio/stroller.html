@@ -132,9 +132,41 @@
         <h3>Motivation</h3>
         <p>
             This project is centered around developing a front-following stroller robot designed to escort a person at
-            running speed. Unlike traditional follow-bots that trail behind, this system positions itself in front of
-            the user. The core innovation involves using pose estimation to infer the user’s intended direction based on
-            body orientation.
+            running
+            speed. Unlike traditional follow-bots that trail behind, this system positions itself in front of the user.
+            The core
+            innovation involves using pose estimation to infer the user’s intended direction based on body orientation.
+        </p>
+        <p>
+            Front-following offers several advantages for real-world assistance robots. It keeps the robot visible to
+            the user,
+            making it easier for the person to anticipate its movements and trust its navigation. This is especially
+            useful when
+            guiding someone who is visually impaired, elderly, or in need of physical support. In crowded or noisy urban
+            environments, it allows the robot to actively lead rather than passively follow, improving flow and
+            communication.
+        </p>
+        <p>
+            In outdoor sidewalk scenarios, this robot will use its ZED camera for body tracking and OS1 LIDAR for
+            obstacle
+            detection. The user’s orientation is inferred using pose estimation, and the robot computes a target point
+            in front
+            of the person to stay within a fixed radius. While moving, it actively avoids curbs, pedestrians, and uneven
+            terrain
+            using live point cloud data and a safety bubble algorithm. Dynamic replanning is triggered when obstacles
+            are
+            detected in its projected path.
+        </p>
+        <p>
+            Unlike indoor robots that rely on pre-mapped spaces, this stroller must perform entirely in unstructured
+            outdoor
+            environments. The system maintains stability at jogging speed while processing camera and LIDAR data in real
+            time,
+            ensuring that both guidance and collision avoidance are handled simultaneously. Path planning uses a
+            combination of
+            linear and curved trajectories depending on user orientation, and velocity commands are capped to match safe
+            outdoor
+            motion.
         </p>
         <p>
             To operate effectively and safely, the robot must continuously assess the environment through path planning
@@ -144,6 +176,11 @@
         </p>
         <img src="images/stroller/intro_diagram.png"
             alt="Annotated image showing the stroller robot with labeled driving and steering mechanisms">
+
+        <p><em>Figure: Overview of the stroller robot design, showing the rear-wheel drive and front steering caster
+                layout that
+                enables front-following navigation.</em></p>
+
 
 
         <div class="row">
@@ -160,10 +197,22 @@
                     durability.
                 </p>
                 <p>
-                    To address the issue, the gearbox mount was redesigned and reinforced to provide greater stability
-                    and
-                    structural support. This upgrade significantly reduced mechanical slippage and improved drivetrain
-                    robustness.
+                    A differential gearbox allows the left and right wheels to rotate at different speeds while
+                    balancing torque across
+                    the drivetrain. This is especially important for turning or uneven traction conditions.
+                    As shown in the video to the side, when the motor is held stationary and one wheel is spun by hand,
+                    the
+                    other wheel
+                    rotates in the opposite direction, demonstrating how torque is balanced.
+                </p>
+                <p>
+                    To address the issue, I CADed new bracing mounts that worked with the existing drivetrain geometry,
+                    strengthening
+                    the surrounding structure and preventing flexing that had previously allowed the bevel gears to
+                    slip. These
+                    reinforcements ensured better load transfer through the gearbox and drastically improved reliability
+                    under sudden
+                    torque changes.
                 </p>
             </div>
             <video autoplay loop muted>
@@ -178,6 +227,11 @@
             <img src="images/stroller/differential gearbox cad.png"
                 alt="CAD diagram illustrating the strengthened gearbox mount and bevel gear alignment">
         </div>
+        <p><em>[Left] CAD of the upgraded gearbox mount and bevel gear alignment [Right] Real-life image showing
+                the black support piece, which corresponds to the blue structural component in the CAD view. This is the
+                main
+                support that stabilizes the gearbox.</em></p>
+
 
 
         <h3>Steering Upgrade and LIDAR Mounting</h3>
@@ -200,7 +254,7 @@
             <img src="images/stroller/new steering CAD.png"
                 alt="CAD model of the new steering assembly with planetary gearbox and reinforced structure">
         </div>
-        <p class="caption"><em>[Left] Old steering assembly using a weaker mount and unsupported stepper motor
+        <p><em>[Left] Old steering assembly using a weaker mount and unsupported stepper motor
                 [Right]
                 CAD model of the new steering assembly with planetary gearbox and reinforced structure </em></p>
 
@@ -208,7 +262,7 @@
         <div class="row">
             <div class="stack" style="width: 60%;">
                 <p>
-                    On the sensing side, I began integration of an OS1 LIDAR sensor, which provides a 3D point cloud
+                    On the sensing side, I began integration of an OS1 LIDAR sensor (shown to the right), which provides a 3D point cloud
                     of
                     the
                     environment to detect obstacles and plan safe paths. Due to its high cost and sensitivity, it
