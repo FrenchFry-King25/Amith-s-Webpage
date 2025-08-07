@@ -1,0 +1,262 @@
+.home-container {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-amithpolineni {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.home-hero {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  position: relative;
+  max-width: 1200px;
+  margin-top: 60px;
+  max-height: 700px;
+  min-height: 500px;
+  align-items: center;
+  margin-bottom: var(--three);
+  flex-direction: column;
+  padding-bottom: var(--three);
+  justify-content: center;
+}
+
+.home-hero-desc-container {
+  flex: 0 0 auto;
+  width: auto;
+  bottom: 0px;
+  height: auto;
+  display: flex;
+  z-index: 2;
+  position: absolute;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-hero-name {
+  color: var(--white);
+  width: 100%;
+  font-size: 4em;
+  text-align: center;
+  padding-top: var(--one);
+  padding-left: var(--two);
+  border-radius: 30px;
+  padding-right: var(--two);
+  padding-bottom: var(--one);
+  background-color: var(--blue);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.home-hero-jobs {
+  width: 100%;
+  font-size: 1.75em;
+  text-align: center;
+  padding-top: 5px;
+  padding-left: var(--one);
+  border-radius: 50px;
+  padding-right: var(--one);
+  padding-bottom: 5px;
+  background-color: var(--yellow);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.home-amith {
+  width: 350px;
+  z-index: 0;
+}
+
+.home-container1 {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--four);
+  justify-content: center;
+}
+
+.home-text01 {
+  width: 90%;
+  z-index: 2;
+  max-width: 1000px;
+  box-shadow: 0px 7px 0px 0px #fdb035, 0px -7px 0px 0px #fdb035;
+  text-align: center;
+  padding-top: var(--half);
+  padding-left: var(--two);
+  padding-right: var(--two);
+  padding-bottom: var(--half);
+  background-color: var(--white);
+}
+
+.home-text02 {
+  font-weight: 400;
+}
+
+.home-text03 {
+  font-weight: 700;
+}
+
+.home-text04 {
+  font-weight: 400;
+}
+
+.home-text05 {
+  font-weight: 700;
+}
+
+.home-text06 {
+  font-weight: 400;
+}
+
+.home-passions-container {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  max-width: 1200px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-passions {
+  flex: 0 0 auto;
+  width: 100%;
+  display: grid;
+  padding: var(--two);
+  grid-row-gap: var(--three);
+  justify-items: center;
+  grid-column-gap: var(--three);
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.home-passion-img2 {
+  width: 100%;
+  height: 100%;
+}
+
+.home-stats {
+  width: 90%;
+  display: grid;
+  padding: var(--three);
+  grid-gap: var(--two);
+  max-width: 1400px;
+  margin-top: var(--three);
+  border-radius: 4px;
+  margin-bottom: var(--three);
+  background-color: var(--white);
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.home-activities {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  max-width: 1200px;
+  margin-top: var(--three);
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-clubs {
+  flex: 0 0 auto;
+  width: 100%;
+  display: grid;
+  padding: var(--three);
+  gap: var(--four);
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  /* grid-template-columns: 1fr 1fr; */
+}
+
+.home-footer-social4 {
+  text-decoration: none;
+}
+
+@media(max-width: 991px) {
+  .home-amith {
+    width: 400px;
+  }
+
+  .home-passions {
+    padding-left: var(--one);
+    padding-right: var(--one);
+  }
+  .home-clubs {
+    gap: 150px;
+  }
+}
+
+@media(max-width: 767px) {
+  .home-hero {
+    height: 500px;
+  }
+
+  .home-passions {
+    padding-left: var(--three);
+    padding-right: var(--three);
+    grid-template-columns: 1fr;
+  }
+
+  .home-stats {
+    padding-left: var(--two);
+    padding-right: var(--two);
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 479px) {
+  .home-nav {
+    padding-top: var(--half);
+    padding-bottom: var(--half);
+  }
+
+  .home-hero {
+    margin-top: var(--onehalf);
+    padding-top: 0px;
+    flex-direction: column;
+  }
+
+  .home-hero-desc-container {
+    width: 90%;
+  }
+
+  .home-hero-name {
+    width: 100%;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .home-hero-jobs {
+    font-size: 1.25em;
+  }
+
+  .home-amith {
+    width: 90%;
+  }
+
+  .home-passions {
+    padding-left: var(--one);
+    padding-right: var(--one);
+  }
+
+  .home-stats {
+    padding-top: var(--two);
+    padding-left: var(--one);
+    padding-right: var(--one);
+    padding-bottom: var(--two);
+    grid-template-columns: 1fr;
+  }
+}
