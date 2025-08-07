@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <title>Amith Polineni</title>
+        <meta property="og:title" content="amithp.com" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="amithp.com" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta property="twitter:card" content="summary_large_image" />
+
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            data-tag="font" />
+        <link rel="stylesheet" href="../style.css" />
+        <style>
+            /* local styles here */
+
+            body {
+                background-color: white;
+            }
+
+            .container {
+                width: 90%;
+                max-width: 900px;
+                margin: 2rem auto;
+                padding-top: 150px;
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            code {
+                background: #eee;
+                padding: 0.2rem 0.4rem;
+                font-size: 0.95em;
+                border-radius: 4px;
+                width: fit-content;
+            }
+
+            .container h1,
+            h2,
+            h3 {
+                padding: 20px 0;
+            }
+
+            .container h1 {
+                font-size: 3rem;
+                margin-bottom: 0.5rem;
+                font-weight: 800;
+                padding: 0;
+            }
+
+            .container h2 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+                font-weight: 700;
+            }
+
+            .container h3 {
+
+                font-size: 2rem;
+                margin: 2rem 0.25rem 0 0;
+                font-weight: 700;
+            }
+
+            .container p,
+            li {
+                font-size: 1.15rem;
+                line-height: 1.3;
+                margin-bottom: 1.5rem;
+            }
+
+            .container img,
+            video {
+                width: 75%;
+                align-self: center;
+                padding: 15px 0;
+            }
+
+            .container .row {
+                display: flex
+            }
+
+            .container .row img,
+            video {
+                flex: 1;
+                padding: 15px 8px;
+            }
+
+            .container .stack {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .container p em {
+                font-size: 1rem;
+                text-align: center;
+            }
+
+            .container ul {
+                padding-left: 60px;
+            }
+        </style>
+        <link rel="icon" href="../images/robot_favicon.png">
+    </head>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="logo">
+            <h1 class="amithpolineni">amithp.com</h1>
+        </div>
+        <div class="links">
+            <a href="/" class="nav-link">home</a>
+            <a href="reviews" class="nav-link ">reviews</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>Front-Following Stroller Robot</h1>
+        <h2>Amith Polineni – Research Intern, UVA VICTOR Robotics Lab</h2>
+
+        <h3>Motivation</h3>
+        <p>
+            This project is centered around developing a front-following stroller robot designed to escort a person at
+            running speed. Unlike traditional follow-bots that trail behind, this system positions itself in front of
+            the user. The core innovation involves using pose estimation to infer the user’s intended direction based on
+            body orientation.
+        </p>
+        <p>
+            To operate effectively and safely, the robot must continuously assess the environment through path planning
+            and obstacle navigation. This allows it to determine a collision-free path that keeps it in front of the
+            person. The project began with simpler back-following demos to test the basic hardware setup and verify
+            initial pose estimation algorithms.
+        </p>
+        <img src="images/stroller/intro_diagram.png"
+            alt="Annotated image showing the stroller robot with labeled driving and steering mechanisms">
+
+
+        <div class="row">
+            <div class="stack" style="width: 35%; padding-right: 50px;">
+                <h3>Differential Gearbox Strengthening</h3>
+                <p>
+                    One major mechanical challenge encountered during early testing was the reliability of the
+                    differential
+                    gearbox. Under sudden changes in load—such as when accelerating or navigating rough surfaces—the
+                    bevel
+                    gears
+                    would occasionally skip. This not only caused noisy operation but also raised concerns about
+                    long-term
+                    durability.
+                </p>
+                <p>
+                    To address the issue, the gearbox mount was redesigned and reinforced to provide greater stability
+                    and
+                    structural support. This upgrade significantly reduced mechanical slippage and improved drivetrain
+                    robustness.
+                </p>
+            </div>
+            <img src="images/stroller/differential gearbox wheels spinning.gif"
+                alt="Side view of the stroller showing the integrated differential gearbox system">
+        </div>
+        <div class="row">
+            <img src="images/stroller/differential gearbox irl.jpg"
+                alt="Close-up photo of the upgraded gearbox mount with reinforced structure">
+            <img src="images/stroller/differential gearbox cad.png"
+                alt="CAD diagram illustrating the strengthened gearbox mount and bevel gear alignment">
+        </div>
+
+
+        <h3>Steering Upgrade and LIDAR Mounting</h3>
+        <p>
+            Steering with a front caster wheel introduces a unique design challenge: as the stroller moves forward,
+            natural caster dynamics tend to realign the wheel straight. This means the steering motor must fight
+            against
+            these forces to maintain accurate turning, especially during quick adjustments or tight maneuvers.
+        </p>
+        <p>
+            To solve this, I upgraded the front steering system with a high-torque motor and a planetary gearbox,
+            providing the necessary force to hold the wheel steady under dynamic conditions. Alongside this, I
+            redesigned the steering assembly in CAD to include thicker supports and stronger mechanical connections,
+            ensuring minimal flex under torque.
+        </p>
+
+        <div class="row">
+            <img src="images/stroller/old steering assembly.jpg"
+                alt="Old steering assembly using a weaker mount and unsupported stepper motor">
+            <img src="images/stroller/new steering CAD.png"
+                alt="CAD model of the new steering assembly with planetary gearbox and reinforced structure">
+        </div>
+        <p class="caption"><em>[Left] Old steering assembly using a weaker mount and unsupported stepper motor
+                [Right]
+                CAD model of the new steering assembly with planetary gearbox and reinforced structure </em></p>
+
+
+        <div class="row">
+            <div class="stack" style="width: 60%;">
+                <p>
+                    On the sensing side, I began integration of an OS1 LIDAR sensor, which provides a 3D point cloud
+                    of
+                    the
+                    environment to detect obstacles and plan safe paths. Due to its high cost and sensitivity, it
+                    was
+                    important
+                    to design a robust and vibration-resistant mounting solution.
+                </p>
+                <p>
+                    I created a custom LIDAR mount with precise 8020 slot inserts that securely attach the sensor to
+                    the
+                    robot’s
+                    aluminum frame. This setup ensures consistent alignment while minimizing noise from vibrations,
+                    which is
+                    critical for maintaining accurate perception.
+                </p>
+            </div>
+            <img src="images/stroller/lidar irl.png" style="height: 300px; object-fit: contain;"
+                alt="Custom LIDAR mount showing OS1 sensor secured to the 8020 aluminum frame">
+
+        </div>
+        <div class="row">
+            <img src="images/stroller/lidar mount CAD close up.png"
+                alt="Custom LIDAR mount showing OS1 sensor secured to the 8020 aluminum frame">
+            <img src="images/stroller/lidar in CAD.png"
+                alt="CAD render of the modular LIDAR mounting assembly with aluminum inserts and vibration isolation">
+
+        </div>
+
+        <h3>Maintain Distance Demo</h3>
+        <p>
+            This demo tested the robot’s ability to follow a person at a constant, safe distance. Using pose
+            estimation
+            and distance data, the robot dynamically adjusted its speed and turning rate to maintain position in
+            front
+            of the person while they walked. Initially, the motion was jerky and unresponsive, but improvements were
+            made in both software and control logic to fix this.
+        </p>
+        <!-- <div class="row">
+            <video autoplay loop muted width="100%">
+                <source src="images/stroller/maintian distance poor smoothing.MOV" type="video/mp4">
+                The robot lagging and reacting poorly to human movement due to rough control tuning
+            </video>
+            <video autoplay loop muted width="100%">
+                <source src="images/stroller/maintain distance tuned smoothing.MOV" type="video/mp4">
+                Improved following behavior with low-pass filtered control inputs
+            </video>
+        </div> -->
+        <p><em>[Left]: Poor smoothing resulted in erratic acceleration and inconsistent following behavior. [Right]:
+                Tuned smoothing using low-pass filtering made the robot’s response much more fluid and
+                predictable.</em></p>
+        <ul>
+            <li><strong>Smoothed Motion (Low-pass Filtering)</strong>: Reduced jitter in speed commands by filtering
+                out
+                high-frequency changes in pose estimation. This dramatically improved responsiveness without
+                introducing
+                lag.</li>
+            <li><strong>Dual Input Mode (Joystick + Autonomous)</strong>: Enabled live override via joystick during
+                testing, which made debugging and safety control easier. A button toggle switched between autonomous
+                and
+                manual mode.</li>
+            <li><strong>Angular Correction via PID Control</strong>: Used proportional-integral-derivative control
+                to
+                smoothly rotate the robot based on the person’s lateral offset in the camera frame.</li>
+            <li><strong>Visualization & Diagnostics</strong>: Realtime printouts in the command line showed the
+                current
+                person distance and robot response. To make it readable at a glance, I used emoji indicators like 🟢
+                for
+                tracking state.</li>
+        </ul>
+        <code>
+            [AUTO] 🟢 Person @ 1.16m → linear.x: 1.77, angular.z: 0.21 <br>
+            [AUTO] 🟢 Person @ 1.58m → linear.x: 0.51, angular.z: 0.00
+        </code>
+
+        <h3>Pose Estimation</h3>
+        <p>
+            To guide itself effectively, the stroller needs to understand where the person intends to move. This is
+            achieved
+            using pose estimation — the process of interpreting human body position and orientation from camera
+            data.
+            The robot
+            uses a ZED stereo camera mounted on the stroller to detect and track body landmarks in 3D.
+        </p>
+        <p>
+            The ZED camera includes built-in body tracking modules, which made implementation easier. Because it
+            relies
+            on
+            stereo vision rather than infrared, it performs reliably outdoors where many depth cameras struggle due
+            to
+            sunlight
+            interference. As part of system upgrades, I transitioned from an older ZED model to the newer ZED2i,
+            which
+            offered
+            improved outdoor accuracy and better ROS2 driver support. This also required updating the CUDA and body
+            tracking SDK
+            to maintain compatibility.
+        </p>
+
+        <img src="images/stroller/zed camera view from stroller.png"
+            alt="ZED camera view showing full-body 3D pose tracking">
+        <p><em>Figure: The ZED camera detects and tracks body joints in real time using stereo vision.</em></p>
+
+        <p>
+            In a separate pose estimation experiment, I also explored Google's <code>Mediapipe</code> framework.
+            Here, I
+            used an
+            Intel RealSense camera and applied pose landmark detection to locate shoulder positions. From these, I
+            computed a
+            normal vector across the shoulders to infer which way the person was facing — a strong indicator of
+            where
+            they
+            intended to walk.
+        </p>
+
+        <img src="images/stroller/shoulder normal vector.gif"
+            alt="GIF showing Mediapipe shoulder landmark detection and normal vector projection">
+        <p><em>Figure: Mediapipe pose estimation with a red arrow showing orientation based on shoulder
+                landmarks.</em>
+        </p>
+
+        <h3>Around-Person Algorithm</h3>
+        <p>
+            Building directly on the shoulder orientation vector shown in the Mediapipe demo, I used the same
+            concept to
+            simulate a person in 2D space. In the animations below, the red circle and arrow represent the human and
+            their
+            direction of motion (based on the normal vector), while the blue circle and arrow represent the robot
+            and
+            its
+            heading.
+        </p>
+        <p>
+            To test control logic for leading the person from the front, I built a simulation environment that
+            models
+            the
+            robot’s movement relative to the human’s changing position and orientation. This setup allowed me to
+            iterate
+            on path
+            planning and response logic without deploying the physical robot.
+        </p>
+
+        <img src="images/stroller/final robot around person animation.gif"
+            alt="Full-featured animation with safety bubble and curved paths">
+        <p><em>Figure: A more advanced animation where the robot (blue) adjusts to stay in front of the person (red) with dynamic path planning, safety buffer, and realistic velocity
+                limits.</em>
+        </p>
+
+        <div class="row">
+            <img src="images/stroller/Recording 2025-07-24 165814.gif"
+                alt="Simple animation showing robot reacting to person’s direction">
+            <img src="images/stroller/Recording 2025-07-25 111541.gif"
+                alt="Simple animation showing robot reacting to person’s direction">
+        </div>
+        <p><em>Earlier unsophisticated versions of the animation where collions were possible and linear movement wasn't implemented </em>
+        </p>
+
+        <p>Features of this simulation include:</p>
+        <ul>
+            <li><strong>Person orientation controlled by mouse</strong>: During simulation, I controlled the red
+                arrow’s
+                direction with mouse movement, mimicking a human turning in place.</li>
+            <li><strong>Maintains fixed radius in front of person</strong>: The robot tries to stay a fixed distance
+                ahead of
+                the user, adjusting its path as needed.</li>
+            <li><strong>Safety bubble around person</strong>: A circular zone around the person that the robot is
+                not
+                allowed to
+                enter, enforcing a buffer space.</li>
+            <li><strong>Dynamic path planning</strong>: The robot selects either straight (linear) or smooth
+                (Bezier)
+                trajectories based on distance and orientation offset.</li>
+            <li><strong>Realistic velocity limits</strong>: Robot speed is capped to prevent unrealistic movement or
+                instability.</li>
+            <li><strong>Live <code>cmd_vel</code></strong>: The robot’s command velocity outputs (linear and
+                angular)
+                are
+                visualized in real time.</li>
+            <li><strong>Failsafe handling</strong>: If the robot cannot find a viable path within constraints, it
+                stops
+                or waits
+                for the person to reorient.</li>
+        </ul>
+
+        <h3>Electronics System Overview</h3>
+        <p>
+            After upgrading the robot’s mechanical components and improving its motion algorithms, I turned to
+            redesigning the
+            electronics for safety, modularity, and power stability. The wiring diagram below shows the entire
+            system
+            architecture, from battery to sensors to actuators.
+        </p>
+
+        <img src="images/stroller/wiring diagram.png" style="width: 100%;"
+            alt="Wiring diagram showing full electronics and power distribution layout">
+        <p><em>Figure: Electronics layout including power regulation, sensor data paths, and motor control
+                systems.</em>
+        </p>
+
+        <p>
+            The entire system is powered by a 6S 22.2V LiPo battery. To protect the battery from over-discharge, a
+            low-voltage
+            shutoff module was added as the first component in the chain. From there, power is branched and
+            regulated
+            into
+            subsystems via buck converters and a central relay-controlled distribution bus:
+        </p>
+        <ul>
+            <li><strong>22.2V to 5V buck converter:</strong> Supplies logic-level voltage to the relay circuit and
+                emergency
+                stop button. The E-STOP can instantly shut off main system power.</li>
+            <li><strong>22.2V to 14.8V buck converter:</strong> Feeds a Spektrum™ Firma™ ESC, which powers the rear
+                differential
+                DC motor.</li>
+            <li><strong>22.2V to 11.1V buck converter:</strong> Feeds the stepper motor driver (TB6600), which runs
+                the
+                high-torque front steering motor.</li>
+        </ul>
+
+        <p>
+            On the sensing and control side, a laptop running ROS serves as the core controller. It connects via USB
+            and
+            serial
+            to:
+        </p>
+        <ul>
+            <li>A <strong>ZED 2i stereo camera</strong> for pose estimation and 3D tracking.</li>
+            <li>A <strong>LIDAR sensor</strong> for obstacle detection.</li>
+            <li>An <strong>Arduino</strong> microcontroller that relays commands to the motor drivers.</li>
+            <li>A <strong>joystick</strong> for manual override input during development and testing.</li>
+        </ul>
+
+        <p>
+            The diagram also shows data pathways in green and USB control in purple. These help clarify which
+            components
+            are
+            sending control signals and which are sending sensor streams. Together, this architecture balances
+            high-power
+            drivetrain needs with delicate sensor inputs, and ensures safe shutdown behavior in the event of an
+            emergency.
+        </p>
+
+        <script>
+            fetch('../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+
+                    if (footer) {
+                        // Fix image paths: src="images/..." or href="images/..."
+                        footer.querySelectorAll('[src], [href]').forEach(el => {
+                            if (el.hasAttribute('src')) {
+                                el.src = el.src.replace(/images\//g, '../images/');
+                            }
+                            if (el.hasAttribute('href')) {
+                                el.href = el.href.replace(/images\//g, '../images/');
+                            }
+                        });
+
+                        // Append the modified footer to this page
+                        document.body.appendChild(footer.cloneNode(true));
+                    }
+                });
+        </script>
+
+
+    </div>
+</body>
+
+</html>
