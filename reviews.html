@@ -161,7 +161,7 @@
 
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
-    var loadnum = 12;
+    var loadnum = 21;
     var values = [];
 
     const starCountRef = ref(database, "friend/");
@@ -190,7 +190,7 @@
 
     document.getElementById("load-more").addEventListener('click', () => {
       let tempLoadnum = loadnum;
-      loadnum += 6;
+      loadnum += 12;
       loadPosts(tempLoadnum);
     });
 

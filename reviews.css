@@ -166,6 +166,12 @@
   border: solid 3px var(--secondary);
   border-radius: 20px;
   background-color: var(--alt_background);
+  transition: 0.3s;
+  box-shadow: 7px 7px 7px 0px rgb(0, 0, 0, 0.1);
+}
+
+.comment:hover {
+  transform: scale(1.12);
 }
 
 .comment-name {
