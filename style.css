@@ -608,14 +608,6 @@ a {
     text-align: center;
   }
 
-  .comment {
-    align-self: center;
-  }
-
-  .comments {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .footer {
     padding-left: 4px;
     padding-right: 4px;

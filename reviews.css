@@ -274,6 +274,14 @@
     padding-left: var(--one);
     padding-right: var(--one);
   }
+
+  .comment {
+    align-self: center;
+  }
+
+  .comments {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media(max-width: 479px) {
@@ -291,6 +299,10 @@
 
   .reviews-review-maker {
     grid-row-gap: var(--two);
+    grid-template-columns: 1fr;
+  }
+
+  .comments {
     grid-template-columns: 1fr;
   }
 }
