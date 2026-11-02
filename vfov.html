@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Robot Vertical FOV Visualizer</title>
+<style>
+:root{--bg:#e9eef2;--panel:#ffffff;--ink:#132029;--mute:#5d6d78;--line:#d0d9e0;--gfill:#cfd8de;--robot:#3c5566;--wheel:#132029;--c50:#0b7a8f;--c80:#d4651a;--dead:#cf2d4a;--vis:#1f9455;--min:#c98a00;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1318;--panel:#151d24;--ink:#e6edf2;--mute:#8d9ca7;--line:#2a3640;--gfill:#232d34;--robot:#7d98aa;--wheel:#070a0c;--c50:#3cc3dc;--c80:#ff9a4a;--dead:#ff5c78;--vis:#4fd484;--min:#ffc233;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1318;--panel:#151d24;--ink:#e6edf2;--mute:#8d9ca7;--line:#2a3640;--gfill:#232d34;--robot:#7d98aa;--wheel:#070a0c;--c50:#3cc3dc;--c80:#ff9a4a;--dead:#ff5c78;--vis:#4fd484;--min:#ffc233;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:20px 16px 32px}
+h1{font-size:23px;margin:0 0 4px;letter-spacing:-.015em}
+.sub{color:var(--mute);margin:0 0 16px;max-width:70ch}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:14px}
+.scroll{overflow-x:auto}
+svg{display:block;min-width:720px;width:100%;height:auto}
+.top{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-bottom:12px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{font:inherit;font-weight:600;padding:8px 14px;border:0;background:transparent;color:var(--ink);cursor:pointer;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--c50);outline-offset:2px}
+.chk{display:inline-flex;gap:8px;align-items:center;cursor:pointer}
+.rst{font:inherit;padding:7px 12px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--ink);cursor:pointer;margin-left:auto}
+.ctrls{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px 26px}
+.s span{display:flex;justify-content:space-between;font-weight:600;margin-bottom:2px}
+output{font-variant-numeric:tabular-nums;font-weight:700}
+input[type=range]{width:100%;accent-color:var(--c50);margin:4px 0}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;font-variant-numeric:tabular-nums}
+th{font-weight:600;color:var(--mute)}
+tr:last-child td{border-bottom:0}
+.sel{background:color-mix(in srgb,var(--ink) 8%,transparent)}
+.note{color:var(--mute);font-size:13px;margin:10px 0 0;max-width:80ch}
+svg text{font:600 15px system-ui,sans-serif;fill:var(--ink);paint-order:stroke;stroke:var(--panel);stroke-width:4px;stroke-linejoin:round}
+svg .m{fill:var(--mute);font-weight:500;font-size:13px}
+.gnd{fill:var(--gfill)} .body{fill:var(--robot)} .wheel{fill:var(--wheel);stroke:var(--panel);stroke-width:1.5}
+.cam{fill:var(--ink);stroke:var(--panel);stroke-width:1.5} .lens{fill:var(--panel)}
+.axis{stroke:var(--ink);stroke-dasharray:7 6;opacity:.45;fill:none}
+.ref{stroke:var(--mute);stroke-dasharray:2 4;fill:none}
+.grid{stroke:var(--line)} .dead{fill:var(--dead)} .vis{fill:var(--vis)} .mind{fill:var(--min)}
+</style>
+</head>
+<body>
+<main>
+<h1>Vertical FOV side view</h1>
+<p class="sub">Robot faces right. The shaded wedge is the camera’s vertical field of view. Red is deadspace between the front of the chassis and the first ground the camera can see. Green is ground it can see.</p>
+
+<div class="card">
+  <div class="top">
+    <div class="seg" id="seg" role="group" aria-label="Camera"></div>
+    <label class="chk"><input type="checkbox" id="cmp" checked> Overlay the other camera</label>
+    <button class="rst" id="rst">Reset</button>
+  </div>
+  <div class="scroll"><svg id="svg" viewBox="0 0 1000 450" role="img" aria-label="Side view of the robot with camera vertical field of view"></svg></div>
+</div>
+
+<div class="card"><div class="ctrls" id="ctrls"></div></div>
+
+<div class="card">
+  <div class="scroll"><table id="tbl"></table></div>
+  <p class="note">All distances are measured along the ground from the front of the chassis. Amber is ground that falls inside the camera’s minimum stereo depth, which is measured along the viewing axis (the amber wedge at the lens shows that cutoff). Model assumes flat ground and an ideal camera. It does not account for the chassis blocking the lower part of the view, which can add deadspace when the camera sits behind the front edge and above the chassis.</p>
+</div>
+</main>
+
+<script>
+const CAMS=[{v:50,n:'OAK-D Pro',c:'var(--c50)'},{v:80,n:'OAK-D Pro W',c:'var(--c80)'}];
+const DEF={cam:50,h:6,tilt:20,set:2,len:16,rng:70,cmp:true,mind:8};
+const S={...DEF};
+const SL=[
+ {k:'h',l:'Camera height off ground',min:0,max:12,step:.25,u:' in'},
+ {k:'tilt',l:'Angle of depression (down)',min:0,max:60,step:1,u:'°'},
+ {k:'set',l:'Camera setback from chassis front',min:0,max:12,step:.5,u:' in'},
+ {k:'len',l:'Chassis length',min:8,max:36,step:1,u:' in'},
+ {k:'mind',l:'Minimum depth (along view axis)',min:0,max:24,step:.5,u:' in'},
+ {k:'rng',l:'View range (zoom)',min:30,max:300,step:5,u:' in'}
+];
+const W=1000,H=450,GY=350,LM=50,RM=30,r=Math.PI/180;
+const $=id=>document.getElementById(id);
+const f=x=>x.toFixed(1)+' in';
+
+function geom(v){
+  const lo=S.tilt+v/2, up=S.tilt-v/2, cx=S.len-S.set;
+  const nearX=cx+S.h/Math.tan(lo*r);
+  const farX=up>0?cx+S.h/Math.tan(up*r):Infinity;
+  const minX=cx+(S.mind-S.h*Math.sin(S.tilt*r))/Math.cos(S.tilt*r);
+  const usableX=Math.max(nearX,minX), from=Math.max(usableX,S.len);
+  const fovDead=Math.max(0,nearX-S.len);
+  return {v,lo,up,nearX,farX,usableX,from,fovDead,dead:Math.max(0,usableX-S.len),extra:Math.max(0,usableX-S.len)-fovDead,span:Math.max(0,farX-from)};
+}
+
+function draw(){
+  const sc=(W-LM-RM)/S.rng, X=x=>LM+x*sc, Y=y=>GY-y*sc, edge=W-RM+10;
+  const cl=x=>Math.min(x,edge);
+  const cxp=X(S.len-S.set), cyp=Y(S.h), fx=X(S.len);
+  const G=CAMS.map(c=>geom(c.v));
+  let s=`<defs><clipPath id="cp"><rect x="0" y="0" width="${W}" height="${GY}"/></clipPath></defs>`;
+  s+=`<rect x="0" y="${GY}" width="${W}" height="${H-GY}" class="gnd"/>`;
+
+  const step=S.rng<=70?6:S.rng<=140?12:S.rng<=280?24:48;
+  for(let d=0;;d+=step){
+    const px=X(S.len+d); if(px>W-RM)break;
+    s+=`<line x1="${px}" y1="0" x2="${px}" y2="${GY}" class="grid"/><text x="${px}" y="${GY+22}" text-anchor="middle" class="m">${d}</text>`;
+  }
+  s+=`<text x="${W-RM}" y="${H-8}" text-anchor="end" class="m">inches ahead of chassis front</text>`;
+
+  const dirv=a=>[Math.cos(a*r),Math.sin(a*r)];
+  const hit=a=>{const[dx,dy]=dirv(a);return dy>1e-6?[cxp+dx*(GY-cyp)/dy,GY]:null};
+  const wedge=(o,i,main)=>{
+    const c=CAMS[i].c, lowE=hit(o.lo), upE=hit(o.up);
+    let pts,upT;
+    if(upE){pts=[[cxp,cyp],lowE,upE];upT=upE;}
+    else{const[dx,dy]=dirv(o.up);upT=[cxp+dx*5000,cyp+dy*5000];pts=[[cxp,cyp],lowE,[W+300,GY],upT];}
+    const dash=main?'':' stroke-dasharray="8 6"';
+    return `<polygon points="${pts.map(p=>p.join(',')).join(' ')}" style="fill:${c};fill-opacity:${main?.24:.08}"/>`+
+      `<line x1="${cxp}" y1="${cyp}" x2="${lowE[0]}" y2="${lowE[1]}" style="stroke:${c}" stroke-width="${main?2.5:2}"${dash}/>`+
+      `<line x1="${cxp}" y1="${cyp}" x2="${upT[0]}" y2="${upT[1]}" style="stroke:${c}" stroke-width="${main?2.5:2}"${dash}/>`;
+  };
+  const sel=CAMS.findIndex(c=>c.v===S.cam), oth=1-sel;
+  s+=`<g clip-path="url(#cp)">`;
+  if(S.cmp)s+=wedge(G[oth],oth,false);
+  s+=wedge(G[sel],sel,true);
+  {const L=S.mind*sc/Math.cos(CAMS[sel].v/2*r), lw=dirv(G[sel].lo), uw=dirv(G[sel].up);
+   s+=`<polygon points="${cxp},${cyp} ${cxp+lw[0]*L},${cyp+lw[1]*L} ${cxp+uw[0]*L},${cyp+uw[1]*L}" style="fill:var(--min);fill-opacity:.35;stroke:var(--min)" stroke-width="2" stroke-dasharray="5 4"/>`;}
+  s+=`<line x1="${cxp}" y1="${cyp}" x2="${cxp+5000*Math.cos(S.tilt*r)}" y2="${cyp+5000*Math.sin(S.tilt*r)}" class="axis"/>`;
+  s+=`<line x1="${cxp}" y1="${cyp}" x2="${W}" y2="${cyp}" class="ref"/></g>`;
+
+  const o=G[sel], a=X(o.from), b=o.farX===Infinity?edge:cl(X(o.farX));
+  const dEnd=Math.max(o.nearX,S.len);
+  if(o.fovDead>0)s+=`<rect x="${fx}" y="${GY}" width="${Math.max(0,cl(X(o.nearX))-fx)}" height="8" class="dead"/>`;
+  if(o.extra>0)s+=`<rect x="${X(dEnd)}" y="${GY}" width="${Math.max(0,cl(X(o.usableX))-X(dEnd))}" height="8" class="mind"/>`;
+  if(b>a)s+=`<rect x="${a}" y="${GY}" width="${b-a}" height="8" class="vis"/>`;
+  s+=`<text x="${fx}" y="${GY+42}" style="fill:var(--dead)">${o.dead>0?'Deadspace '+f(o.dead)+(o.extra>0.05?' ('+f(o.fovDead)+' from FOV + '+f(o.extra)+' from min depth)':''):'No deadspace'}</text>`;
+  s+=`<text x="${Math.min(a,W-300)}" y="${GY+64}" style="fill:var(--vis)">${o.span===0?'No usable ground in view':o.farX===Infinity?'Ground visible: '+f(o.from-S.len)+' to horizon':'Ground visible: '+f(o.from-S.len)+' to '+f(o.farX-S.len)}</text>`;
+  if(S.cmp){
+    const p=G[oth], c=CAMS[oth].c;
+    [p.usableX,p.farX].forEach(x=>{ if(x!==Infinity&&X(x)<edge&&x>=S.len) s+=`<circle cx="${X(x)}" cy="${GY}" r="5" style="fill:${c};stroke:var(--panel)" stroke-width="1.5"/>`; });
+  }
+
+  // robot
+  s+=`<rect x="${X(0)}" y="${Y(5)}" width="${S.len*sc}" height="${4*sc}" rx="${.6*sc}" class="body"/>`;
+  [2,S.len-2].forEach(x=>{s+=`<circle cx="${X(x)}" cy="${Y(2)}" r="${2*sc}" class="wheel"/>`;});
+  if(S.h>5)s+=`<line x1="${cxp}" y1="${Y(5)}" x2="${cxp}" y2="${cyp}" stroke="var(--robot)" stroke-width="${Math.max(3,.5*sc)}"/>`;
+  const cw=Math.max(3.2*sc,18), ch=cw*.45;
+  s+=`<g transform="translate(${cxp} ${cyp}) rotate(${S.tilt})"><rect x="${-cw/2}" y="${-ch/2}" width="${cw}" height="${ch}" rx="3" class="cam"/><circle cx="${cw/2-ch*.45}" cy="0" r="${ch*.28}" class="lens"/></g>`;
+
+  // annotations
+  if(S.h>=1){
+    s+=`<line x1="${cxp}" y1="${cyp+ch}" x2="${cxp}" y2="${GY}" class="ref"/><text x="${cxp-8}" y="${(cyp+GY)/2}" text-anchor="end">${S.h} in</text>`;
+  }
+  if(S.tilt>0){
+    const R=58,t=S.tilt*r;
+    s+=`<path d="M ${cxp+R} ${cyp} A ${R} ${R} 0 0 1 ${cxp+R*Math.cos(t)} ${cyp+R*Math.sin(t)}" fill="none" stroke="var(--ink)" stroke-width="1.5"/>`;
+    s+=`<text x="${cxp+R+10}" y="${cyp-6}" style="fill:var(--ink)">${S.tilt}° down</text>`;
+  }
+  $('svg').innerHTML=s;
+
+  const rows=[
+    ['Deadspace ahead of chassis',q=>q.dead>0?f(q.dead):'None'],
+    ['Of which: FOV geometry',q=>f(q.fovDead)],
+    ['Of which: minimum depth',q=>f(q.extra)],
+    ['Nearest ground seen',q=>f(q.from-S.len)],
+    ['Farthest ground seen',q=>q.span===0?'None':q.farX===Infinity?'Horizon':f(q.farX-S.len)],
+    ['Visible ground length',q=>q.span===Infinity?'Unlimited':f(q.span)],
+    ['Top edge of view',q=>q.up>0?q.up.toFixed(0)+'° below horizon':q.up===0?'Level with horizon':(-q.up).toFixed(0)+'° above horizon'],
+    ['Bottom edge of view',q=>q.lo.toFixed(0)+'° below horizon']
+  ];
+  $('tbl').innerHTML=`<tr><th></th>${CAMS.map((c,i)=>`<th class="${i===sel?'sel':''}" style="color:${c.c}">${c.n} (${c.v}° VFOV)</th>`).join('')}</tr>`+
+    rows.map(([l,fn])=>`<tr><th>${l}</th>${G.map((q,i)=>`<td class="${i===sel?'sel':''}">${fn(q)}</td>`).join('')}</tr>`).join('');
+}
+
+function sync(){
+  if(S.set>S.len-1)S.set=S.len-1;
+  SL.forEach(d=>{$('s_'+d.k).value=S[d.k];$('o_'+d.k).textContent=S[d.k]+d.u;});
+  $('cmp').checked=S.cmp;
+  [...$('seg').children].forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.v===S.cam)));
+  draw();
+}
+
+$('seg').innerHTML=CAMS.map(c=>`<button type="button" data-v="${c.v}" aria-pressed="false">${c.n} · ${c.v}°</button>`).join('');
+$('seg').onclick=e=>{const b=e.target.closest('button');if(b){S.cam=+b.dataset.v;sync();}};
+$('ctrls').innerHTML=SL.map(d=>`<label class="s"><span>${d.l}<output id="o_${d.k}"></output></span><input type="range" id="s_${d.k}" min="${d.min}" max="${d.max}" step="${d.step}"></label>`).join('');
+SL.forEach(d=>$('s_'+d.k).addEventListener('input',e=>{S[d.k]=+e.target.value;sync();}));
+$('cmp').onchange=e=>{S.cmp=e.target.checked;sync();};
+$('rst').onclick=()=>{Object.assign(S,DEF);sync();};
+sync();
+</script>
+</body>
+</html>
