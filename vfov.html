@@ -1,7 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://amithp.com/vfov.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Robot Vertical FOV Visualizer</title>
 <style>
@@ -43,30 +43,30 @@ svg .m{fill:var(--mute);font-weight:500;font-size:13px}
 .grid{stroke:var(--line)} .dead{fill:var(--dead)} .vis{fill:var(--vis)} .mind{fill:var(--min)}
 </style>
 </head>
-<body>
+<body cz-shortcut-listen="true">
 <main>
 <h1>Vertical FOV side view</h1>
 <p class="sub">Robot faces right. The shaded wedge is the camera’s vertical field of view. Red is deadspace between the front of the chassis and the first ground the camera can see. Green is ground it can see.</p>
 
 <div class="card">
   <div class="top">
-    <div class="seg" id="seg" role="group" aria-label="Camera"></div>
-    <label class="chk"><input type="checkbox" id="cmp" checked> Overlay the other camera</label>
+    <div class="seg" id="seg" role="group" aria-label="Camera"><button type="button" data-v="50" aria-pressed="true">OAK-D Pro · 50°</button><button type="button" data-v="80" aria-pressed="false">OAK-D Pro W · 80°</button></div>
+    <label class="chk"><input type="checkbox" id="cmp" checked=""> Overlay the other camera</label>
     <button class="rst" id="rst">Reset</button>
   </div>
-  <div class="scroll"><svg id="svg" viewBox="0 0 1000 450" role="img" aria-label="Side view of the robot with camera vertical field of view"></svg></div>
+  <div class="scroll"><svg id="svg" viewBox="0 0 1000 450" role="img" aria-label="Side view of the robot with camera vertical field of view"><defs><clippath id="cp"><rect x="0" y="0" width="1000" height="350"></rect></clippath></defs><rect x="0" y="350" width="1000" height="100" class="gnd"></rect><line x1="260.2857142857143" y1="0" x2="260.2857142857143" y2="350" class="grid"></line><text x="260.2857142857143" y="372" text-anchor="middle" class="m">0</text><line x1="339.1428571428571" y1="0" x2="339.1428571428571" y2="350" class="grid"></line><text x="339.1428571428571" y="372" text-anchor="middle" class="m">6</text><line x1="418" y1="0" x2="418" y2="350" class="grid"></line><text x="418" y="372" text-anchor="middle" class="m">12</text><line x1="496.85714285714283" y1="0" x2="496.85714285714283" y2="350" class="grid"></line><text x="496.85714285714283" y="372" text-anchor="middle" class="m">18</text><line x1="575.7142857142857" y1="0" x2="575.7142857142857" y2="350" class="grid"></line><text x="575.7142857142857" y="372" text-anchor="middle" class="m">24</text><line x1="654.5714285714286" y1="0" x2="654.5714285714286" y2="350" class="grid"></line><text x="654.5714285714286" y="372" text-anchor="middle" class="m">30</text><line x1="733.4285714285714" y1="0" x2="733.4285714285714" y2="350" class="grid"></line><text x="733.4285714285714" y="372" text-anchor="middle" class="m">36</text><line x1="812.2857142857142" y1="0" x2="812.2857142857142" y2="350" class="grid"></line><text x="812.2857142857142" y="372" text-anchor="middle" class="m">42</text><line x1="891.1428571428571" y1="0" x2="891.1428571428571" y2="350" class="grid"></line><text x="891.1428571428571" y="372" text-anchor="middle" class="m">48</text><line x1="970" y1="0" x2="970" y2="350" class="grid"></line><text x="970" y="372" text-anchor="middle" class="m">54</text><text x="970" y="442" text-anchor="end" class="m">inches ahead of chassis front</text><g clip-path="url(#cp)"><polygon points="234,271.1428571428571 279.5281926560962,350 1300,350 4932.463103929542,-1438.9578594854866" style="fill:var(--c80);fill-opacity:0.08"></polygon><line x1="234" y1="271.1428571428571" x2="279.5281926560962" y2="350" style="stroke:var(--c80)" stroke-width="2" stroke-dasharray="8 6"></line><line x1="234" y1="271.1428571428571" x2="4932.463103929542" y2="-1438.9578594854866" style="stroke:var(--c80)" stroke-width="2" stroke-dasharray="8 6"></line><polygon points="234,271.1428571428571 312.8571428571429,350 1300,350 5214.973490458728,-164.63585659543372" style="fill:var(--c50);fill-opacity:0.24"></polygon><line x1="234" y1="271.1428571428571" x2="312.8571428571429" y2="350" style="stroke:var(--c50)" stroke-width="2.5"></line><line x1="234" y1="271.1428571428571" x2="5214.973490458728" y2="-164.63585659543372" style="stroke:var(--c50)" stroke-width="2.5"></line><polygon points="234,271.1428571428571 316.03308891578155,353.17594605863866 349.57084505519805,261.0317183664162" style="fill:var(--min);fill-opacity:.35;stroke:var(--min)" stroke-width="2" stroke-dasharray="5 4"></polygon><line x1="234" y1="271.1428571428571" x2="4932.463103929542" y2="1981.2435737712008" class="axis"></line><line x1="234" y1="271.1428571428571" x2="1000" y2="271.1428571428571" class="ref"></line></g><rect x="260.2857142857143" y="350" width="52.571428571428555" height="8" class="dead"></rect><rect x="312.85714285714283" y="350" width="4.331895889618238" height="8" class="mind"></rect><rect x="317.18903874676107" y="350" width="662.8109612532389" height="8" class="vis"></rect><text x="260.2857142857143" y="392" style="fill:var(--dead)">Deadspace 4.3 in (4.0 in from FOV + 0.3 in from min depth)</text><text x="317.18903874676107" y="414" style="fill:var(--vis)">Ground visible: 4.3 in to horizon</text><circle cx="317.18903874676107" cy="350" r="5" style="fill:var(--c80);stroke:var(--panel)" stroke-width="1.5"></circle><rect x="50" y="284.2857142857143" width="210.28571428571428" height="52.57142857142857" rx="7.885714285714285" class="body"></rect><circle cx="76.28571428571428" cy="323.7142857142857" r="26.285714285714285" class="wheel"></circle><circle cx="234" cy="323.7142857142857" r="26.285714285714285" class="wheel"></circle><line x1="234" y1="284.2857142857143" x2="234" y2="271.1428571428571" stroke="var(--robot)" stroke-width="6.571428571428571"></line><g transform="translate(234 271.1428571428571) rotate(20)"><rect x="-21.02857142857143" y="-9.462857142857143" width="42.05714285714286" height="18.925714285714285" rx="3" class="cam"></rect><circle cx="12.512" cy="0" r="5.299200000000001" class="lens"></circle></g><line x1="234" y1="290.0685714285714" x2="234" y2="350" class="ref"></line><text x="226" y="310.57142857142856" text-anchor="end">6 in</text><path d="M 292 271.1428571428571 A 58 58 0 0 1 288.5021720055827 290.9800254557459" fill="none" stroke="var(--ink)" stroke-width="1.5"></path><text x="302" y="265.1428571428571" style="fill:var(--ink)">20° down</text></svg></div>
 </div>
 
-<div class="card"><div class="ctrls" id="ctrls"></div></div>
+<div class="card"><div class="ctrls" id="ctrls"><label class="s"><span>Camera height off ground<output id="o_h">6 in</output></span><input type="range" id="s_h" min="0" max="12" step="0.25"></label><label class="s"><span>Angle of depression (down)<output id="o_tilt">20°</output></span><input type="range" id="s_tilt" min="0" max="60" step="1"></label><label class="s"><span>Camera setback from chassis front<output id="o_set">2 in</output></span><input type="range" id="s_set" min="0" max="12" step="0.5"></label><label class="s"><span>Chassis length<output id="o_len">16 in</output></span><input type="range" id="s_len" min="8" max="36" step="1"></label><label class="s"><span>Minimum depth (along view axis)<output id="o_mind">8 in</output></span><input type="range" id="s_mind" min="0" max="24" step="0.5"></label><label class="s"><span>View range (zoom)<output id="o_rng">70 in</output></span><input type="range" id="s_rng" min="30" max="300" step="5"></label></div></div>
 
 <div class="card">
-  <div class="scroll"><table id="tbl"></table></div>
+  <div class="scroll"><table id="tbl"><tbody><tr><th></th><th class="sel" style="color:var(--c50)">OAK-D Pro (50° VFOV)</th><th class="" style="color:var(--c80)">OAK-D Pro W (80° VFOV)</th></tr><tr><th>Deadspace ahead of chassis</th><td class="sel">4.3 in</td><td class="">4.3 in</td></tr><tr><th>Of which: FOV geometry</th><td class="sel">4.0 in</td><td class="">1.5 in</td></tr><tr><th>Of which: minimum depth</th><td class="sel">0.3 in</td><td class="">2.9 in</td></tr><tr><th>Nearest ground seen</th><td class="sel">4.3 in</td><td class="">4.3 in</td></tr><tr><th>Farthest ground seen</th><td class="sel">Horizon</td><td class="">Horizon</td></tr><tr><th>Visible ground length</th><td class="sel">Unlimited</td><td class="">Unlimited</td></tr><tr><th>Top edge of view</th><td class="sel">5° above horizon</td><td class="">20° above horizon</td></tr><tr><th>Bottom edge of view</th><td class="sel">45° below horizon</td><td class="">60° below horizon</td></tr></tbody></table></div>
   <p class="note">All distances are measured along the ground from the front of the chassis. Amber is ground that falls inside the camera’s minimum stereo depth, which is measured along the viewing axis (the amber wedge at the lens shows that cutoff). Model assumes flat ground and an ideal camera. It does not account for the chassis blocking the lower part of the view, which can add deadspace when the camera sits behind the front edge and above the chassis.</p>
 </div>
 </main>
 
 <script>
-const CAMS=[{v:50,n:'OAK-D Pro',c:'var(--c50)'},{v:80,n:'OAK-D Pro W',c:'var(--c80)'}];
+const CAMS=[{v:55,n:'OAK-D Pro',c:'var(--c50)'},{v:80,n:'OAK-D Pro W',c:'var(--c80)'}];
 const DEF={cam:50,h:6,tilt:20,set:2,len:16,rng:70,cmp:true,mind:8};
 const S={...DEF};
 const SL=[
@@ -187,5 +187,7 @@ $('cmp').onchange=e=>{S.cmp=e.target.checked;sync();};
 $('rst').onclick=()=>{Object.assign(S,DEF);sync();};
 sync();
 </script>
-</body>
-</html>
+<script type="module" src="./Robot Vertical FOV Visualizer_files/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;0e8ec319c4c743a29bcd5be84750234e&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+</body></html>
